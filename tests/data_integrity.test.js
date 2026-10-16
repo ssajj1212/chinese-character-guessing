@@ -5,12 +5,13 @@ import path from 'path';
 describe('Character Dataset Integrity', () => {
   const dataPath = path.resolve(__dirname, '../data/characters.json');
 
-  it('dataset file must exist and contain at least 70 characters', () => {
+  it('dataset file must exist and contain 150 to 200 characters', () => {
     expect(fs.existsSync(dataPath)).toBe(true);
     const raw = fs.readFileSync(dataPath, 'utf-8');
     const characters = JSON.parse(raw);
     expect(Array.isArray(characters)).toBe(true);
-    expect(characters.length).toBeGreaterThanOrEqual(70);
+    expect(characters.length).toBeGreaterThanOrEqual(150);
+    expect(characters.length).toBeLessThanOrEqual(200);
   });
 
   it('each character must have valid structure, svg glyph, and bilingual meanings', () => {

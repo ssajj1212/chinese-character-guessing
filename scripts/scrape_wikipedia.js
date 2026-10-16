@@ -8,6 +8,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { NEW_CHARACTERS, EXISTING_DIFFICULTIES } from './new_characters.js';
+import { EXPANDED_CHARACTERS } from './dataset_characters_expanded.js';
+import { WikimediaScraper } from './scraper_wikimedia.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1201,16 +1203,37 @@ const BRONZE_SEAL_PATHS = {
   }
 };
 
-export async function buildDataset() {
+export async function buildDataset(options = {}) {
+  const fetchRemote = options.fetchRemote || process.argv.includes('--fetch-remote');
+  const scraper = new WikimediaScraper();
+
+  if (fetchRemote) {
+    console.log('[Scraper Engine] --fetch-remote enabled: Syncing SVGs from Wikimedia Commons...');
+    const charList = ['天', '馬', '气', '四', '示', '网', '川', '俞', '或', '享', '尿', '温'];
+    await scraper.syncBatch(charList, ['oracle']);
+  }
+
   const targetDir = path.resolve(__dirname, '../data');
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  const allCharacters = [...CHARACTER_COLLECTION, ...NEW_CHARACTERS];
+  const allCharacters = [...CHARACTER_COLLECTION, ...NEW_CHARACTERS, ...EXPANDED_CHARACTERS];
   const compiled = allCharacters.map(char => {
     const custom = BRONZE_SEAL_PATHS[char.id] || {};
-    const inner = extractInnerSvgPaths(char.oracle_bone.svg);
+    
+    // Check if authentic SVG exists in scraped cache
+    let oracleSvg = char.oracle_bone.svg;
+    const cachedOracle = scraper.getCached(char.modern, 'oracle');
+    if (cachedOracle) {
+      const geo = scraper.extractGeometry(cachedOracle);
+      const wrapped = scraper.wrapToOracleRubbing(geo);
+      if (wrapped) {
+        oracleSvg = wrapped;
+      }
+    }
+
+    const inner = extractInnerSvgPaths(oracleSvg);
     const bronzePaths = custom.bronze || inner;
     const sealPaths = custom.seal || inner;
     const difficulty = char.difficulty || EXISTING_DIFFICULTIES[char.id] || "medium";
@@ -1218,11 +1241,15 @@ export async function buildDataset() {
     return {
       ...char,
       difficulty,
+      oracle_bone: {
+        ...char.oracle_bone,
+        svg: oracleSvg
+      },
       evolution: [
         {
           era: "商代 (~1200 BCE)",
           stage: "甲骨文 (Oracle Bone)",
-          glyph: char.oracle_bone.svg
+          glyph: oracleSvg
         },
         {
           era: "周代 (~1000 BCE)",
@@ -1246,7 +1273,19 @@ export async function buildDataset() {
   const targetFile = path.join(targetDir, 'characters.json');
   fs.writeFileSync(targetFile, JSON.stringify(compiled, null, 2), 'utf-8');
 
+  const diffCounts = compiled.reduce((acc, c) => {
+    acc[c.difficulty] = (acc[c.difficulty] || 0) + 1;
+    return acc;
+  }, {});
+
+  const catCounts = compiled.reduce((acc, c) => {
+    acc[c.category] = (acc[c.category] || 0) + 1;
+    return acc;
+  }, {});
+
   console.log(`[Scraper Engine] Successfully compiled ${compiled.length} curated Oracle Bone pictographs with vector evolution SVGs.`);
+  console.log(`[Scraper Engine] Difficulty breakdown: Easy: ${diffCounts.easy || 0}, Medium: ${diffCounts.medium || 0}, Hard: ${diffCounts.hard || 0}`);
+  console.log(`[Scraper Engine] Category breakdown:`, catCounts);
   console.log(`[Scraper Engine] Bundled output written to: ${targetFile}`);
   return compiled;
 }
