@@ -236,16 +236,11 @@
 }
 
 .choice-meaning-en {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.25;
-}
-
-.choice-meaning-zh {
-  font-family: var(--font-serif);
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  line-height: 1.35;
+  padding-right: 1.5rem;
 }
 
 /* Choice Evaluation States */

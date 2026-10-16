@@ -72,7 +72,7 @@ export class CodexManager {
           <div class="tile-modern-char">${char.modern}</div>
           <div class="tile-pinyin">${char.pinyin}</div>
         `;
-        tile.setAttribute('title', `点击细读：${char.modern} (${char.meaning.zh})`);
+        tile.setAttribute('title', `Inspect: ${char.modern} · ${char.meaning.en}`);
         tile.addEventListener('click', () => {
           if (typeof this.onInspect === 'function') {
             this.onInspect(char);
@@ -81,10 +81,10 @@ export class CodexManager {
       } else {
         tile.innerHTML = `
           <div class="tile-mystery-glyph">？</div>
-          <div class="tile-modern-char">未解</div>
-          <div class="tile-pinyin">${char.categoryName.zh}</div>
+          <div class="tile-modern-char">Locked</div>
+          <div class="tile-pinyin">${char.categoryName.en}</div>
         `;
-        tile.setAttribute('title', '待研判解锁');
+        tile.setAttribute('title', 'Locked · Guess correctly in Play to decode');
       }
 
       this.gridContainer.appendChild(tile);

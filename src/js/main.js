@@ -97,12 +97,12 @@ class AppController {
     this.btnSound?.addEventListener('click', () => {
       const isMuted = this.sound.toggleMute();
       this.btnSound.textContent = isMuted ? '🔕' : '🔔';
-      this.btnSound.title = isMuted ? '已静音 (取消静音)' : '音效开启 (点击静音)';
+      this.btnSound.title = isMuted ? 'Muted (click to unmute)' : 'Sound On (click to mute)';
     });
 
     // Reset progress
     this.btnReset?.addEventListener('click', () => {
-      if (confirm('确认重置您的学士阅历与全部已解密甲骨字表吗？')) {
+      if (confirm('Are you sure you want to reset your scholar level and unlocked artifact codex?')) {
         this.state.resetAll();
         this.updateHeaderUI();
         this.codex.updateStats();
@@ -177,11 +177,11 @@ class AppController {
     const info = this.state.getLevelInfo();
 
     if (this.scholarBadge) this.scholarBadge.textContent = info.badge;
-    if (this.scholarTitleZh) this.scholarTitleZh.textContent = info.titleZh;
-    if (this.scholarTitleEn) this.scholarTitleEn.textContent = `${info.titleEn} · Lv.${info.level}`;
+    if (this.scholarTitleEn) this.scholarTitleEn.textContent = `${info.titleEn}`;
+    if (this.scholarTitleZh) this.scholarTitleZh.textContent = `${info.titleZh} · Lv.${info.level}`;
 
     if (this.xpText) {
-      this.xpText.textContent = info.isMaxLevel ? `${this.state.xp} XP (文博大成)` : `${this.state.xp} / ${info.nextXp} XP`;
+      this.xpText.textContent = info.isMaxLevel ? `${this.state.xp} XP (Grand Master)` : `${this.state.xp} / ${info.nextXp} XP`;
     }
     if (this.xpFill) {
       this.xpFill.style.width = `${info.progressPercent}%`;
@@ -192,7 +192,7 @@ class AppController {
 
     if (this.streakCount) {
       const mult = this.state.getMultiplier();
-      this.streakCount.textContent = mult > 1 ? `${this.state.streak} 连击 (${mult}x)` : `${this.state.streak} 连击`;
+      this.streakCount.textContent = mult > 1 ? `${this.state.streak} Streak (${mult}x)` : `${this.state.streak} Streak`;
     }
     if (this.streakIndicator) {
       if (this.state.streak >= 3) {
@@ -208,20 +208,18 @@ class AppController {
     this.currentQuestionData = this.engine.nextQuestion();
     const { roundNumber, currentCharacter, options } = this.currentQuestionData;
 
-    // Reset button states
+    // Reset button states (English only for guessing choices)
     this.choiceBtns.forEach((btn, idx) => {
       btn.disabled = false;
       btn.className = 'choice-btn';
       const opt = options[idx];
       const enEl = btn.querySelector('.choice-meaning-en');
-      const zhEl = btn.querySelector('.choice-meaning-zh');
       if (enEl) enEl.textContent = opt.meaningEn;
-      if (zhEl) zhEl.textContent = opt.meaningZh;
     });
 
-    // Set round and category metadata
-    if (this.roundCounter) this.roundCounter.textContent = `第 ${roundNumber} 题`;
-    if (this.categoryTag) this.categoryTag.textContent = `${currentCharacter.categoryName.zh} · ${currentCharacter.categoryName.en}`;
+    // Set round and category metadata in English
+    if (this.roundCounter) this.roundCounter.textContent = `Question ${roundNumber}`;
+    if (this.categoryTag) this.categoryTag.textContent = `${currentCharacter.categoryName.en}`;
 
     // Inject Oracle Bone SVG and modern character
     if (this.oracleGlyphContainer) {
@@ -293,13 +291,13 @@ class AppController {
     if (result.correct) {
       this.verdictTitle.className = 'verdict-tag correct';
       this.verdictIcon.textContent = '✨';
-      this.verdictText.textContent = '研判精辟 · 正确！';
-      this.verdictScore.textContent = `+${result.scoreEarned} XP (倍率 ${result.multiplier}x)`;
+      this.verdictText.textContent = 'Correct!';
+      this.verdictScore.textContent = `+${result.scoreEarned} XP (${result.multiplier}x Multiplier)`;
     } else {
       this.verdictTitle.className = 'verdict-tag incorrect';
       this.verdictIcon.textContent = '📜';
-      this.verdictText.textContent = `正解为：${result.correctOption.meaningZh}`;
-      this.verdictScore.textContent = '+0 XP (连击中断)';
+      this.verdictText.textContent = `Answer: ${result.correctOption.meaningEn}`;
+      this.verdictScore.textContent = '+0 XP (Streak Reset)';
     }
 
     if (this.revealModernGlyph) this.revealModernGlyph.textContent = result.modern;
@@ -323,7 +321,7 @@ class AppController {
       });
     }
 
-    this.btnNext.textContent = '参阅下一文字 (Next) ➔';
+    this.btnNext.textContent = 'Next Inscription (下一题) ➔';
     this.btnNext.style.display = 'flex';
     this.revealModal.classList.add('active');
   }
@@ -339,8 +337,8 @@ class AppController {
 
     this.verdictTitle.className = 'verdict-tag correct';
     this.verdictIcon.textContent = '🏛️';
-    this.verdictText.textContent = '甲骨典藏图册细读';
-    this.verdictScore.textContent = `${char.categoryName.zh}`;
+    this.verdictText.textContent = 'Artifact Codex Inspection';
+    this.verdictScore.textContent = `${char.categoryName.en}`;
 
     if (this.revealModernGlyph) this.revealModernGlyph.textContent = char.modern;
     if (this.revealPinyin) this.revealPinyin.textContent = char.pinyin;
@@ -362,7 +360,7 @@ class AppController {
       });
     }
 
-    this.btnNext.textContent = '关闭细读窗口 (Close)';
+    this.btnNext.textContent = 'Close Inspection (关闭)';
     this.btnNext.onclick = () => this.closeRevealModal();
     this.revealModal.classList.add('active');
   }
@@ -385,8 +383,8 @@ class AppController {
     this.sound.playLevelUp();
 
     if (this.promotedBadge) this.promotedBadge.textContent = info.badge;
-    if (this.promotedTitle) this.promotedTitle.textContent = info.titleZh;
-    if (this.promotedDesc) this.promotedDesc.textContent = info.desc;
+    if (this.promotedTitle) this.promotedTitle.textContent = `${info.titleEn} (${info.titleZh})`;
+    if (this.promotedDesc) this.promotedDesc.textContent = info.descEn || info.desc;
 
     if (this.levelUpModal) {
       this.levelUpModal.classList.add('active');

@@ -5,11 +5,11 @@
 import { StorageService } from './storage.js';
 
 export const SCHOLAR_LEVELS = [
-  { level: 1, requiredXp: 0, titleZh: '见习考订生', titleEn: 'Novice Excavator', badge: '🪨', desc: '刚入殷墟的青涩学子，开始辨认天地万物之初形' },
-  { level: 2, requiredXp: 400, titleZh: '卜辞抄写手', titleEn: 'Inscription Scribe', badge: '🖌️', desc: '笔墨初成，能摹写龟甲兽骨上的先民刀痕' },
-  { level: 3, requiredXp: 1000, titleZh: '殷墟识字郎', titleEn: 'Yin Ruins Cryptographer', badge: '🗡️', desc: '贯通象形指事之理，能识辨百余甲骨原形' },
-  { level: 4, requiredXp: 2000, titleZh: '商周大贞人', titleEn: 'Shang Royal Diviner', badge: '🐢', desc: '知悉上古占卜奥秘，领悟甲骨演变流转之妙' },
-  { level: 5, requiredXp: 3500, titleZh: '华夏文史大学士', titleEn: 'Grand Imperial Historian', badge: '📜', desc: '学究天人，通晓三千年华夏汉字源流文脉' }
+  { level: 1, requiredXp: 0, titleZh: '见习考订生', titleEn: 'Novice Excavator', badge: '🪨', desc: '刚入殷墟的青涩学子，开始辨认天地万物之初形', descEn: 'A fledgling scholar at the Anyang ruins, beginning to decipher the earliest pictographs of nature and cosmos.' },
+  { level: 2, requiredXp: 400, titleZh: '卜辞抄写手', titleEn: 'Inscription Scribe', badge: '🖌️', desc: '笔墨初成，能摹写龟甲兽骨上的先民刀痕', descEn: 'Skilled with the stylus, able to transcribe sacred divinations carved into oracle bones and shells.' },
+  { level: 3, requiredXp: 1000, titleZh: '殷墟识字郎', titleEn: 'Yin Ruins Cryptographer', badge: '🗡️', desc: '贯通象形指事之理，能识辨百余甲骨原形', descEn: 'Master of ancient pictographs, recognizing foundational glyphs across nature, animals, and human life.' },
+  { level: 4, requiredXp: 2000, titleZh: '商周大贞人', titleEn: 'Shang Royal Diviner', badge: '🐢', desc: '知悉上古占卜奥秘，领悟甲骨演变流转之妙', descEn: 'Privy to sacred royal rites, understanding the mystical origins and historical evolutions of ancient scripts.' },
+  { level: 5, requiredXp: 3500, titleZh: '华夏文史大学士', titleEn: 'Grand Imperial Historian', badge: '📜', desc: '学究天人，通晓三千年华夏汉字源流文脉', descEn: 'A revered master of antiquity, holding profound insight into 3,000 years of Chinese writing and culture.' }
 ];
 
 export class GameState {
@@ -158,6 +158,7 @@ export class GameState {
       titleEn: current.titleEn,
       badge: current.badge,
       desc: current.desc,
+      descEn: current.descEn,
       currentXp: this.xp,
       nextXp: next ? next.requiredXp : current.requiredXp,
       xpToNext,

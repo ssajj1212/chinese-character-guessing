@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>甲骨探幽 · Oracle Bone Script Guessing Game</title>
+  <title>Oracle Bone Quest · 甲骨探幽</title>
   <meta name="description" content="Discover the 3,000-year-old origins of Chinese characters through an engaging, gamified Oracle Bone script guessing experience." />
   
   <!-- Modern Calligraphic & Serif Typography -->
@@ -26,17 +26,17 @@
         <div class="brand-section">
           <div class="brand-seal" aria-hidden="true">骨</div>
           <div class="brand-text">
-            <h1>甲骨探幽 <span class="en-sub">Oracle Bone Script</span></h1>
+            <h1>Oracle Bone Quest <span class="en-sub">甲骨探幽</span></h1>
           </div>
         </div>
 
         <div class="header-controls">
           <nav class="nav-tabs" aria-label="Game Navigation">
-            <button id="tab-play" class="nav-tab-btn active" type="button">⚔️ 猜字研判</button>
-            <button id="tab-codex" class="nav-tab-btn" type="button">🏛️ 甲骨典藏</button>
+            <button id="tab-play" class="nav-tab-btn active" type="button">⚔️ Play</button>
+            <button id="tab-codex" class="nav-tab-btn" type="button">🏛️ Artifact Codex</button>
           </nav>
-          <button id="btn-sound" class="icon-btn" type="button" aria-label="Toggle Sound Effects" title="切换音效">🔔</button>
-          <button id="btn-reset" class="icon-btn" type="button" aria-label="Reset Progress" title="重置记录">🔄</button>
+          <button id="btn-sound" class="icon-btn" type="button" aria-label="Toggle Sound Effects" title="Toggle sound">🔔</button>
+          <button id="btn-reset" class="icon-btn" type="button" aria-label="Reset Progress" title="Reset progress">🔄</button>
         </div>
       </div>
 
@@ -45,14 +45,14 @@
         <div class="scholar-badge-info">
           <div id="scholar-badge" class="scholar-badge" aria-label="Scholar Badge">🪨</div>
           <div class="scholar-titles">
-            <span id="scholar-title-zh" class="scholar-title-zh">见习考订生</span>
-            <span id="scholar-title-en" class="scholar-title-en">Novice Excavator · Lv.1</span>
+            <span id="scholar-title-en" class="scholar-title-zh">Novice Excavator</span>
+            <span id="scholar-title-zh" class="scholar-title-en">见习考订生 · Lv.1</span>
           </div>
         </div>
 
         <div class="scholar-xp-track">
           <div class="xp-label-row">
-            <span>学识阅历 (XP)</span>
+            <span>Scholar XP</span>
             <span id="xp-text">0 / 400 XP</span>
           </div>
           <div class="xp-bar-bg">
@@ -62,12 +62,12 @@
 
         <div class="score-stats">
           <div class="stat-pill">
-            <span class="stat-label">总分 Score</span>
+            <span class="stat-label">Total Score</span>
             <span id="score-display" class="stat-value">0</span>
           </div>
-          <div id="streak-indicator" class="streak-indicator" title="连续答对倍率">
+          <div id="streak-indicator" class="streak-indicator" title="Streak Multiplier">
             <span>🔥</span>
-            <span id="streak-count">0 连击</span>
+            <span id="streak-count">0 Streak</span>
           </div>
         </div>
       </div>
@@ -76,8 +76,8 @@
     <!-- Main Game Arena View -->
     <main id="game-view" class="game-arena">
       <div class="round-meta-bar">
-        <div id="round-counter" class="round-counter">第 1 题</div>
-        <div id="category-tag" class="category-tag">自然天象 · Nature</div>
+        <div id="round-counter" class="round-counter">Question 1</div>
+        <div id="category-tag" class="category-tag">Nature & Cosmos</div>
       </div>
 
       <!-- Bonus Countdown Timer -->
@@ -87,45 +87,41 @@
 
       <!-- Oracle Bone Rubbing Card -->
       <section class="oracle-rubbing-card" aria-label="Ancient Inscription Card">
-        <div class="modern-char-badge" title="现代规范字">
-          <span class="badge-sub">简体字</span>
+        <div class="modern-char-badge" title="Modern Simplified Chinese Character">
+          <span class="badge-sub">Simplified</span>
           <span id="modern-char" class="char-glyph">日</span>
         </div>
 
-        <div id="oracle-glyph-container" class="glyph-showcase" title="商代甲骨原形">
+        <div id="oracle-glyph-container" class="glyph-showcase" title="Shang Dynasty Oracle Bone Inscription">
           <!-- Dynamically Injected SVG -->
         </div>
 
-        <div class="rubbing-hint">商代殷墟甲骨卜辞原刻拓片</div>
+        <div class="rubbing-hint">Authentic Shang Dynasty (~1200 BCE) Inscription Rubbing</div>
       </section>
 
       <!-- Guessing Prompt -->
       <div class="guess-prompt">
-        <h2>此字在古汉语与英文中作何含义？</h2>
-        <p>根据甲骨初形与现代字形，从下方选项中选出正确释义</p>
+        <h2>What does this ancient character mean?</h2>
+        <p>Examine the Oracle Bone pictograph and modern character, then pick the correct meaning:</p>
       </div>
 
-      <!-- 4 Bilingual Multiple Choice Cards -->
+      <!-- 4 Multiple Choice Cards (English only for guessing) -->
       <div class="choices-grid" role="group" aria-label="Meaning Choices">
         <button id="choice-0" class="choice-btn" type="button" data-index="0">
           <span class="choice-key-badge">1</span>
           <span class="choice-meaning-en">Sun / Day</span>
-          <span class="choice-meaning-zh">太阳 / 日子</span>
         </button>
         <button id="choice-1" class="choice-btn" type="button" data-index="1">
           <span class="choice-key-badge">2</span>
           <span class="choice-meaning-en">Moon / Month</span>
-          <span class="choice-meaning-zh">月亮 / 月份</span>
         </button>
         <button id="choice-2" class="choice-btn" type="button" data-index="2">
           <span class="choice-key-badge">3</span>
           <span class="choice-meaning-en">Mountain / Peak</span>
-          <span class="choice-meaning-zh">山峦 / 高山</span>
         </button>
         <button id="choice-3" class="choice-btn" type="button" data-index="3">
           <span class="choice-key-badge">4</span>
           <span class="choice-meaning-en">Water / River</span>
-          <span class="choice-meaning-zh">水流 / 河流</span>
         </button>
       </div>
     </main>
@@ -134,11 +130,11 @@
     <section id="codex-view" class="codex-arena" style="display: none;">
       <div class="codex-header-card">
         <div class="codex-intro">
-          <h2>殷墟甲骨典藏图谱</h2>
-          <p>辨识文字以将其永久收录入典藏阁，随时探索字形演进脉络</p>
+          <h2>Oracle Bone Artifact Codex</h2>
+          <p>Identify ancient characters through play to permanently unlock them in the museum archive.</p>
         </div>
         <div class="codex-progress-badge">
-          <span>解密进度:</span>
+          <span>Decoded:</span>
           <span id="codex-progress-text" class="progress-stats-num">0 / 51</span>
           <span id="codex-progress-percent" style="color: var(--text-muted); font-size: 0.85rem;">(0%)</span>
         </div>
@@ -146,12 +142,12 @@
 
       <!-- Category Filter Pills -->
       <div class="codex-filters" role="tablist">
-        <button class="filter-chip active" data-category="all" type="button">全部文字 (All)</button>
-        <button class="filter-chip" data-category="nature" type="button">自然天象 (Nature)</button>
-        <button class="filter-chip" data-category="animals" type="button">飞禽走兽 (Animals)</button>
-        <button class="filter-chip" data-category="human" type="button">人体形貌 (Human)</button>
-        <button class="filter-chip" data-category="plants" type="button">植物原野 (Plants)</button>
-        <button class="filter-chip" data-category="tools" type="button">器物生息 (Tools)</button>
+        <button class="filter-chip active" data-category="all" type="button">All (全部)</button>
+        <button class="filter-chip" data-category="nature" type="button">Nature & Cosmos (自然)</button>
+        <button class="filter-chip" data-category="animals" type="button">Animals (飞禽走兽)</button>
+        <button class="filter-chip" data-category="human" type="button">Human & Life (人体)</button>
+        <button class="filter-chip" data-category="plants" type="button">Plants & Flora (植物)</button>
+        <button class="filter-chip" data-category="tools" type="button">Tools & Objects (器物)</button>
       </div>
 
       <!-- Character Tiles Grid -->
@@ -166,7 +162,7 @@
         <div class="reveal-verdict">
           <div id="verdict-title" class="verdict-tag correct">
             <span id="verdict-icon">✨</span>
-            <span id="verdict-text">研判精辟 · 正确！</span>
+            <span id="verdict-text">Correct!</span>
           </div>
           <div id="verdict-score" class="verdict-score-bonus">+150 XP</div>
         </div>
@@ -178,7 +174,7 @@
             <div class="identity-phonetics">
               <div class="pinyin-row">
                 <span id="reveal-pinyin" class="pinyin-text">rì</span>
-                <button id="btn-pronounce" class="pronounce-btn" type="button" title="朗读书写读音" aria-label="Listen to Chinese pronunciation">🔊</button>
+                <button id="btn-pronounce" class="pronounce-btn" type="button" title="Listen to pronunciation" aria-label="Listen to Chinese pronunciation">🔊</button>
               </div>
               <div id="reveal-meaning" class="meaning-summary">Sun / Day · 太阳、日子</div>
             </div>
@@ -187,15 +183,15 @@
 
         <!-- Four-Stage Historical Evolution Timeline -->
         <div class="evolution-section">
-          <div class="section-label">三千年汉字源流流变演进</div>
+          <div class="section-label">3,000-Year Script Evolution · 汉字源流演进</div>
           <div id="evolution-stepper" class="evolution-stepper">
             <!-- Dynamically populated stages -->
           </div>
         </div>
 
-        <!-- Etymological Origin Story -->
+        <!-- Etymological Origin Story (Word Explanation Part) -->
         <div class="evolution-section">
-          <div class="section-label">先民造字本义 (Etymology)</div>
+          <div class="section-label">Pictographic Origin & Etymology · 造字本义</div>
           <div id="etymology-text" class="etymology-box">
             圆圈象征太阳外廓，中间一横或黑点表示太阳乃实体发光发热之天体，避免与空心圆混淆。
           </div>
@@ -203,11 +199,11 @@
 
         <!-- Fun Archaeological Fact -->
         <div id="fun-fact-container" class="fun-fact-box">
-          <strong>殷墟考据：</strong><span id="fun-fact-text">在甲骨卜辞中，商王占卜是否出征、祭祀、或祈雨，日字皆作为核心天象字频繁出现。</span>
+          <strong>Archaeological Notes (殷墟考据)：</strong><span id="fun-fact-text">在甲骨卜辞中，商王占卜是否出征、祭祀、或祈雨，日字皆作为核心天象字频繁出现。</span>
         </div>
 
         <button id="btn-next" class="next-question-btn" type="button">
-          <span>参阅下一文字 (Next)</span>
+          <span>Next Inscription (下一题)</span>
           <span aria-hidden="true">➔</span>
         </button>
       </div>
@@ -216,17 +212,17 @@
     <!-- Scholar Level-Up Celebration Modal -->
     <div id="level-up-modal" class="level-up-modal" role="dialog" aria-modal="true">
       <div class="level-up-content">
-        <div class="level-up-tag">学士晋阶 · SCHOLAR PROMOTION</div>
+        <div class="level-up-tag">SCHOLAR PROMOTION · 晋阶</div>
         <div id="promoted-badge" class="level-up-badge">🖌️</div>
-        <div id="promoted-title" class="level-up-title">卜辞抄写手</div>
-        <div id="promoted-desc" class="level-up-desc">笔墨初成，能摹写龟甲兽骨上的先民刀痕！</div>
-        <button id="btn-level-dismiss" class="level-up-dismiss-btn" type="button">登堂入室 · 领命</button>
+        <div id="promoted-title" class="level-up-title">Inscription Scribe</div>
+        <div id="promoted-desc" class="level-up-desc">Skilled with the stylus, able to transcribe sacred divinations carved into oracle bones and shells.</div>
+        <button id="btn-level-dismiss" class="level-up-dismiss-btn" type="button">Accept Rank & Continue</button>
       </div>
     </div>
 
     <!-- App Footer -->
     <footer class="app-footer">
-      <p>甲骨原形源自殷墟遗址甲骨拓本及维基共享资源 (Wikimedia Commons) 开放数据 · 寓教于乐，溯流华夏文字三千年</p>
+      <p>Oracle bone pictographs sourced from Yinxu archaeological rubbings and Wikimedia Commons open datasets · Explore 3,000 years of Chinese character heritage</p>
     </footer>
   </div>
 
