@@ -28,6 +28,12 @@
   gap: 0.4rem;
 }
 
+.meta-tags-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .category-tag {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
@@ -38,13 +44,42 @@
   font-family: var(--font-serif);
 }
 
+.difficulty-tag {
+  font-size: 0.72rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.difficulty-tag.easy {
+  background: rgba(56, 176, 0, 0.15);
+  color: #70e000;
+  border: 1px solid rgba(112, 224, 0, 0.3);
+}
+
+.difficulty-tag.medium {
+  background: rgba(255, 183, 3, 0.15);
+  color: #ffb703;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.difficulty-tag.hard {
+  background: rgba(208, 0, 0, 0.18);
+  color: #ff4d6d;
+  border: 1px solid rgba(255, 77, 109, 0.35);
+}
+
 /* Category Filter Bar in Game Arena */
 .game-category-bar {
   display: flex;
   align-items: center;
   gap: 0.45rem;
   width: 100%;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.5rem;
   overflow-x: auto;
   padding-bottom: 0.2rem;
   scrollbar-width: none;
@@ -81,6 +116,48 @@
 
 .game-cat-btn.active {
   background: var(--imperial-gold);
+  color: var(--bg-dark);
+  border-color: var(--imperial-gold);
+  font-weight: 700;
+  box-shadow: 0 2px 8px var(--imperial-gold-glow);
+}
+
+/* Difficulty Filter Bar in Game Arena */
+.game-diff-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scrollbar-width: none;
+}
+
+.game-diff-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.game-diff-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.game-diff-btn:hover {
+  border-color: var(--imperial-gold);
+  color: var(--text-primary);
+}
+
+.game-diff-btn.active {
+  background: linear-gradient(135deg, var(--imperial-gold) 0%, #b38f2a 100%);
   color: var(--bg-dark);
   border-color: var(--imperial-gold);
   font-weight: 700;

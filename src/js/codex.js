@@ -1,6 +1,6 @@
 /**
  * Ancient Codex / Museum Gallery Manager
- * Handles artifact collection rendering, category filtering, and item inspection/challenges.
+ * Handles artifact collection rendering, category & difficulty filtering, and item inspection/challenges.
  */
 
 export class CodexManager {
@@ -19,11 +19,13 @@ export class CodexManager {
     }
 
     this.currentCategory = 'all';
+    this.currentDifficulty = 'all';
 
     this.gridContainer = document.getElementById('codex-grid');
     this.progressCountEl = document.getElementById('codex-progress-text');
     this.progressPercentEl = document.getElementById('codex-progress-percent');
     this.filterChips = document.querySelectorAll('.codex-filters .filter-chip');
+    this.diffChips = document.querySelectorAll('.codex-diff-chip');
     this.btnPracticeCategory = document.getElementById('btn-practice-category');
 
     this.init();
@@ -36,6 +38,15 @@ export class CodexManager {
         chip.classList.add('active');
         this.currentCategory = chip.dataset.category || 'all';
         this.updatePracticeBtnLabel();
+        this.render();
+      });
+    });
+
+    this.diffChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        this.diffChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        this.currentDifficulty = chip.dataset.difficulty || 'all';
         this.render();
       });
     });
@@ -91,8 +102,9 @@ export class CodexManager {
     this.gridContainer.innerHTML = '';
 
     const filtered = this.characters.filter(char => {
-      if (this.currentCategory === 'all') return true;
-      return char.category === this.currentCategory;
+      const matchCat = this.currentCategory === 'all' || char.category === this.currentCategory;
+      const matchDiff = this.currentDifficulty === 'all' || char.difficulty === this.currentDifficulty;
+      return matchCat && matchDiff;
     });
 
     filtered.forEach(char => {
@@ -100,17 +112,21 @@ export class CodexManager {
       const tile = document.createElement('div');
       tile.className = `codex-tile ${isUnlocked ? 'unlocked' : 'locked'}`;
       tile.dataset.id = char.id;
+      tile.dataset.difficulty = char.difficulty || 'easy';
       tile.tabIndex = 0;
       tile.setAttribute('role', 'button');
 
+      const diff = char.difficulty || 'easy';
+
       if (isUnlocked) {
         tile.innerHTML = `
+          <span class="tile-diff-badge ${diff}">${diff}</span>
           <div class="tile-oracle-svg">${char.oracle_bone.svg}</div>
           <div class="tile-modern-char">${char.modern}</div>
           <div class="tile-pinyin">${char.pinyin}</div>
           <div class="tile-tag">Decoded</div>
         `;
-        tile.setAttribute('title', `Inspect: ${char.modern} · ${char.meaning.en}`);
+        tile.setAttribute('title', `[${diff.toUpperCase()}] Inspect: ${char.modern} · ${char.meaning.en}`);
         tile.addEventListener('click', () => {
           if (typeof this.onInspect === 'function') {
             this.onInspect(char, true);
@@ -118,12 +134,13 @@ export class CodexManager {
         });
       } else {
         tile.innerHTML = `
+          <span class="tile-diff-badge ${diff}">${diff}</span>
           <div class="tile-mystery-glyph">？</div>
           <div class="tile-modern-char">Undiscovered</div>
           <div class="tile-pinyin">${char.categoryName.en}</div>
           <div class="tile-tag challenge-tag">⚔️ Challenge</div>
         `;
-        tile.setAttribute('title', `Click to challenge and decode this ${char.categoryName.en} character`);
+        tile.setAttribute('title', `[${diff.toUpperCase()}] Click to challenge and decode this ${char.categoryName.en} character`);
         tile.addEventListener('click', () => {
           if (typeof this.onInspect === 'function') {
             this.onInspect(char, false);

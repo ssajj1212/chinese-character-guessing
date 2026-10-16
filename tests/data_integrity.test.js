@@ -5,12 +5,12 @@ import path from 'path';
 describe('Character Dataset Integrity', () => {
   const dataPath = path.resolve(__dirname, '../data/characters.json');
 
-  it('dataset file must exist and contain at least 40 characters', () => {
+  it('dataset file must exist and contain at least 70 characters', () => {
     expect(fs.existsSync(dataPath)).toBe(true);
     const raw = fs.readFileSync(dataPath, 'utf-8');
     const characters = JSON.parse(raw);
     expect(Array.isArray(characters)).toBe(true);
-    expect(characters.length).toBeGreaterThanOrEqual(40);
+    expect(characters.length).toBeGreaterThanOrEqual(70);
   });
 
   it('each character must have valid structure, svg glyph, and bilingual meanings', () => {
@@ -18,6 +18,7 @@ describe('Character Dataset Integrity', () => {
     const characters = JSON.parse(raw);
 
     const categories = new Set();
+    const difficulties = new Set();
 
     for (const char of characters) {
       expect(char.id).toBeDefined();
@@ -27,12 +28,17 @@ describe('Character Dataset Integrity', () => {
       expect(char.meaning.zh).toBeTruthy();
       expect(char.oracle_bone.svg).toContain('<svg');
       expect(Array.isArray(char.evolution)).toBe(true);
-      expect(char.evolution.length).toBeGreaterThanOrEqual(3);
+      expect(char.evolution.length).toBe(4);
+      expect(['easy', 'medium', 'hard']).toContain(char.difficulty);
+
       categories.add(char.category);
+      difficulties.add(char.difficulty);
     }
 
-    // Verify broad category diversity (Nature, Animals, Human, Plants, Tools)
-    expect(categories.size).toBeGreaterThanOrEqual(4);
+    // Verify 5 distinct categories
+    expect(categories.size).toBe(5);
+    // Verify 3 distinct difficulties (easy, medium, hard)
+    expect(difficulties.size).toBe(3);
   });
 
   it('evolution stages must have renderable SVGs for ancient scripts to prevent blank/tofu boxes', () => {

@@ -7,6 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { NEW_CHARACTERS, EXISTING_DIFFICULTIES } from './new_characters.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1206,14 +1207,17 @@ export async function buildDataset() {
     fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  const compiled = CHARACTER_COLLECTION.map(char => {
+  const allCharacters = [...CHARACTER_COLLECTION, ...NEW_CHARACTERS];
+  const compiled = allCharacters.map(char => {
     const custom = BRONZE_SEAL_PATHS[char.id] || {};
     const inner = extractInnerSvgPaths(char.oracle_bone.svg);
     const bronzePaths = custom.bronze || inner;
     const sealPaths = custom.seal || inner;
+    const difficulty = char.difficulty || EXISTING_DIFFICULTIES[char.id] || "medium";
 
     return {
       ...char,
+      difficulty,
       evolution: [
         {
           era: "商代 (~1200 BCE)",

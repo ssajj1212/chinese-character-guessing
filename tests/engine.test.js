@@ -8,6 +8,7 @@ const mockCharacters = [
     modern: '日',
     pinyin: 'rì',
     category: 'nature',
+    difficulty: 'easy',
     categoryName: { en: 'Nature', zh: '自然' },
     meaning: { en: 'Sun / Day', zh: '太阳 / 日子' },
     description: 'Ancient pictograph of the sun.',
@@ -23,6 +24,7 @@ const mockCharacters = [
     modern: '月',
     pinyin: 'yuè',
     category: 'nature',
+    difficulty: 'easy',
     categoryName: { en: 'Nature', zh: '自然' },
     meaning: { en: 'Moon / Month', zh: '月亮 / 月份' },
     description: 'Crescent moon.',
@@ -35,6 +37,7 @@ const mockCharacters = [
     modern: '水',
     pinyin: 'shuǐ',
     category: 'nature',
+    difficulty: 'easy',
     categoryName: { en: 'Nature', zh: '自然' },
     meaning: { en: 'Water / River', zh: '水流 / 河流' },
     oracle_bone: { svg: '<svg></svg>', notes: 'Water current' },
@@ -46,6 +49,7 @@ const mockCharacters = [
     modern: '火',
     pinyin: 'huǒ',
     category: 'nature',
+    difficulty: 'easy',
     categoryName: { en: 'Nature', zh: '自然' },
     meaning: { en: 'Fire / Flame', zh: '火焰 / 火光' },
     oracle_bone: { svg: '<svg></svg>', notes: 'Flame tongues' },
@@ -57,11 +61,24 @@ const mockCharacters = [
     modern: '牛',
     pinyin: 'niú',
     category: 'animals',
+    difficulty: 'medium',
     categoryName: { en: 'Animals', zh: '动物' },
     meaning: { en: 'Ox / Cattle', zh: '牛 / 黄牛' },
     oracle_bone: { svg: '<svg></svg>', notes: 'Curved horns' },
     evolution: [],
     funFact: 'Ox fact'
+  },
+  {
+    id: 'char_ding',
+    modern: '鼎',
+    pinyin: 'dǐng',
+    category: 'tools',
+    difficulty: 'hard',
+    categoryName: { en: 'Tools', zh: '器物' },
+    meaning: { en: 'Cauldron', zh: '鼎' },
+    oracle_bone: { svg: '<svg></svg>', notes: 'Cauldron' },
+    evolution: [],
+    funFact: 'Ding fact'
   }
 ];
 
@@ -82,14 +99,13 @@ describe('QuizEngine', () => {
     expect(correctOptions.length).toBe(1);
     expect(correctOptions[0].id).toBe(q.currentCharacter.id);
 
-    // Verify option labels are bilingual
     expect(correctOptions[0].meaningEn).toBeDefined();
     expect(correctOptions[0].meaningZh).toBeDefined();
   });
 
   it('awards score and updates streak on correct guess', () => {
     const q = engine.nextQuestion();
-    const result = engine.submitAnswer(q.currentCharacter.id, 10); // 10s remaining
+    const result = engine.submitAnswer(q.currentCharacter.id, 10);
 
     expect(result.correct).toBe(true);
     expect(result.scoreEarned).toBeGreaterThanOrEqual(100);
@@ -134,5 +150,25 @@ describe('QuizEngine', () => {
     expect(q.currentCharacter.id).toBe('char_niu');
     expect(q.currentCharacter.modern).toBe('牛');
     expect(q.options.some(o => o.id === 'char_niu' && o.isCorrect)).toBe(true);
+  });
+
+  it('filters questions by difficulty when difficulty filter is set', () => {
+    engine.setDifficultyFilter('easy');
+    for (let i = 0; i < 5; i++) {
+      const q = engine.nextQuestion();
+      expect(q.currentCharacter.difficulty).toBe('easy');
+    }
+  });
+
+  it('awards higher base XP for harder difficulty characters', () => {
+    // Easy character (0 seconds remaining to isolate base score)
+    const qEasy = engine.nextQuestion('char_ri');
+    const resEasy = engine.submitAnswer(qEasy.currentCharacter.id, 0);
+
+    // Hard character (0 seconds remaining)
+    const qHard = engine.nextQuestion('char_ding');
+    const resHard = engine.submitAnswer(qHard.currentCharacter.id, 0);
+
+    expect(resHard.scoreEarned).toBeGreaterThan(resEasy.scoreEarned);
   });
 });

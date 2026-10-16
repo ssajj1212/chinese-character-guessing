@@ -77,7 +77,10 @@
     <main id="game-view" class="game-arena">
       <div class="round-meta-bar">
         <div id="round-counter" class="round-counter">Question 1</div>
-        <div id="category-tag" class="category-tag">Nature & Cosmos</div>
+        <div class="meta-tags-group">
+          <div id="difficulty-tag" class="difficulty-tag easy">🟢 Easy</div>
+          <div id="category-tag" class="category-tag">Nature & Cosmos</div>
+        </div>
       </div>
 
       <!-- Category Filter Pills in Game Arena -->
@@ -89,6 +92,15 @@
         <button class="game-cat-btn" data-category="human" type="button">Human (人体)</button>
         <button class="game-cat-btn" data-category="plants" type="button">Plants (植物)</button>
         <button class="game-cat-btn" data-category="tools" type="button">Tools (器物)</button>
+      </div>
+
+      <!-- Difficulty Filter Pills in Game Arena -->
+      <div class="game-diff-bar" role="tablist" aria-label="Question Difficulty Filter">
+        <span class="category-filter-label">Difficulty:</span>
+        <button class="game-diff-btn active" data-difficulty="all" type="button">All (全部)</button>
+        <button class="game-diff-btn" data-difficulty="easy" type="button">🟢 Easy (入门)</button>
+        <button class="game-diff-btn" data-difficulty="medium" type="button">🟡 Medium (进阶)</button>
+        <button class="game-diff-btn" data-difficulty="hard" type="button">🔴 Master (宗师)</button>
       </div>
 
       <!-- Bonus Countdown Timer -->
@@ -146,7 +158,7 @@
         </div>
         <div class="codex-progress-badge">
           <span>Decoded:</span>
-          <span id="codex-progress-text" class="progress-stats-num">0 / 51</span>
+          <span id="codex-progress-text" class="progress-stats-num">0 / 72</span>
           <span id="codex-progress-percent" style="color: var(--text-muted); font-size: 0.85rem;">(0%)</span>
         </div>
       </div>
@@ -162,6 +174,15 @@
           <button class="filter-chip" data-category="tools" type="button">Tools & Objects (器物)</button>
         </div>
         <button id="btn-practice-category" class="practice-category-btn" type="button">⚔️ Practice All Categories</button>
+      </div>
+
+      <!-- Difficulty Filter Row in Codex -->
+      <div class="codex-diff-row" role="tablist" aria-label="Codex Difficulty Filter">
+        <span class="filter-row-label">Difficulty:</span>
+        <button class="codex-diff-chip active" data-difficulty="all" type="button">All Tiers</button>
+        <button class="codex-diff-chip" data-difficulty="easy" type="button">🟢 Easy (入门)</button>
+        <button class="codex-diff-chip" data-difficulty="medium" type="button">🟡 Medium (进阶)</button>
+        <button class="codex-diff-chip" data-difficulty="hard" type="button">🔴 Master (宗师)</button>
       </div>
 
       <!-- Character Tiles Grid -->
@@ -189,6 +210,7 @@
               <div class="pinyin-row">
                 <span id="reveal-pinyin" class="pinyin-text">rì</span>
                 <button id="btn-pronounce" class="pronounce-btn" type="button" title="Listen to pronunciation" aria-label="Listen to Chinese pronunciation">🔊</button>
+                <span id="reveal-difficulty-tag" class="difficulty-tag easy">🟢 Easy</span>
               </div>
               <div id="reveal-meaning" class="meaning-summary">Sun / Day · 太阳、日子</div>
             </div>

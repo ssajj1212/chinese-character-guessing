@@ -57,7 +57,9 @@ class AppController {
     // Game Arena
     this.roundCounter = document.getElementById('round-counter');
     this.categoryTag = document.getElementById('category-tag');
+    this.difficultyTag = document.getElementById('difficulty-tag');
     this.gameCatBtns = document.querySelectorAll('.game-cat-btn');
+    this.gameDiffBtns = document.querySelectorAll('.game-diff-btn');
     this.timerFill = document.getElementById('timer-fill');
     this.oracleGlyphContainer = document.getElementById('oracle-glyph-container');
     this.modernCharBadge = document.getElementById('modern-char');
@@ -76,6 +78,7 @@ class AppController {
     this.verdictScore = document.getElementById('verdict-score');
     this.revealModernGlyph = document.getElementById('reveal-modern-glyph');
     this.revealPinyin = document.getElementById('reveal-pinyin');
+    this.revealDifficultyTag = document.getElementById('reveal-difficulty-tag');
     this.revealMeaning = document.getElementById('reveal-meaning');
     this.btnPronounce = document.getElementById('btn-pronounce');
     this.evolutionStepper = document.getElementById('evolution-stepper');
@@ -120,6 +123,17 @@ class AppController {
       btn?.addEventListener('click', () => {
         const cat = btn.dataset.category || 'all';
         this.practiceCategory(cat);
+      });
+    });
+
+    // Game Difficulty selection buttons
+    this.gameDiffBtns.forEach(btn => {
+      btn?.addEventListener('click', () => {
+        this.gameDiffBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const diff = btn.dataset.difficulty || 'all';
+        this.engine.setDifficultyFilter(diff);
+        this.loadNextQuestion();
       });
     });
 
@@ -248,9 +262,20 @@ class AppController {
       if (enEl) enEl.textContent = opt.meaningEn;
     });
 
-    // Set round and category metadata in English
+    // Set round, category, and difficulty metadata
     if (this.roundCounter) this.roundCounter.textContent = `Question ${roundNumber}`;
     if (this.categoryTag) this.categoryTag.textContent = `${currentCharacter.categoryName.en}`;
+    
+    const diff = currentCharacter.difficulty || 'easy';
+    const diffLabels = {
+      easy: '🟢 Easy (入门)',
+      medium: '🟡 Medium (进阶)',
+      hard: '🔴 Master (宗师)'
+    };
+    if (this.difficultyTag) {
+      this.difficultyTag.className = `difficulty-tag ${diff}`;
+      this.difficultyTag.textContent = diffLabels[diff] || diff;
+    }
 
     // Inject Oracle Bone SVG and modern character
     if (this.oracleGlyphContainer) {
@@ -334,6 +359,14 @@ class AppController {
     if (this.revealModernGlyph) this.revealModernGlyph.textContent = result.modern;
     if (this.revealPinyin) this.revealPinyin.textContent = result.pinyin;
     if (this.revealMeaning) this.revealMeaning.textContent = `${result.meaning.en} · ${result.meaning.zh}`;
+    
+    const diff = result.difficulty || 'easy';
+    const basePts = { easy: 100, medium: 150, hard: 200 };
+    if (this.revealDifficultyTag) {
+      this.revealDifficultyTag.className = `difficulty-tag ${diff}`;
+      this.revealDifficultyTag.textContent = `${diff.toUpperCase()} · ${basePts[diff]} Base XP`;
+    }
+
     if (this.etymologyText) this.etymologyText.textContent = result.description;
     if (this.funFactText) this.funFactText.textContent = result.funFact;
 
@@ -380,6 +413,13 @@ class AppController {
       if (this.revealModernGlyph) this.revealModernGlyph.textContent = char.modern;
       if (this.revealPinyin) this.revealPinyin.textContent = char.pinyin;
       if (this.revealMeaning) this.revealMeaning.textContent = `${char.meaning.en} · ${char.meaning.zh}`;
+      
+      const diff = char.difficulty || 'easy';
+      if (this.revealDifficultyTag) {
+        this.revealDifficultyTag.className = `difficulty-tag ${diff}`;
+        this.revealDifficultyTag.textContent = `${diff.toUpperCase()}`;
+      }
+
       if (this.etymologyText) this.etymologyText.textContent = char.description;
       if (this.funFactText) this.funFactText.textContent = char.funFact;
 

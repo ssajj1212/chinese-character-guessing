@@ -39,7 +39,8 @@
         "glyph": "日"
       }
     ],
-    "funFact": "Ancient diviners placed a dot in the center of the sun symbol to distinguish it from an empty circle."
+    "funFact": "Ancient diviners placed a dot in the center of the sun symbol to distinguish it from an empty circle.",
+    "difficulty": "easy"
   },
   {
     "id": "char_yue",
@@ -81,7 +82,8 @@
         "glyph": "月"
       }
     ],
-    "funFact": "Because the lunar cycle takes ~29.5 days, '月' simultaneously came to mean 'calendar month'."
+    "funFact": "Because the lunar cycle takes ~29.5 days, '月' simultaneously came to mean 'calendar month'.",
+    "difficulty": "easy"
   },
   {
     "id": "char_shui",
@@ -123,7 +125,8 @@
         "glyph": "水"
       }
     ],
-    "funFact": "In Chinese radicals, '水' transforms into the three drops of water '氵' when placed on the left side of characters."
+    "funFact": "In Chinese radicals, '水' transforms into the three drops of water '氵' when placed on the left side of characters.",
+    "difficulty": "easy"
   },
   {
     "id": "char_huo",
@@ -165,7 +168,8 @@
         "glyph": "火"
       }
     ],
-    "funFact": "As a radical at the bottom of a character, '火' became the four flame dots '灬' (as in 热, 照)."
+    "funFact": "As a radical at the bottom of a character, '火' became the four flame dots '灬' (as in 热, 照).",
+    "difficulty": "easy"
   },
   {
     "id": "char_shan",
@@ -207,7 +211,8 @@
         "glyph": "山"
       }
     ],
-    "funFact": "The structure has remained virtually unchanged for over 3,200 years, making it one of the most stable pictographs."
+    "funFact": "The structure has remained virtually unchanged for over 3,200 years, making it one of the most stable pictographs.",
+    "difficulty": "easy"
   },
   {
     "id": "char_chuan",
@@ -249,7 +254,8 @@
         "glyph": "川"
       }
     ],
-    "funFact": "The Sichuan province (四川) gets its name from the Four Rivers flowing through its fertile basin."
+    "funFact": "The Sichuan province (四川) gets its name from the Four Rivers flowing through its fertile basin.",
+    "difficulty": "easy"
   },
   {
     "id": "char_yu",
@@ -291,7 +297,8 @@
         "glyph": "雨"
       }
     ],
-    "funFact": "In divination questions, '帝其令雨' (Will the High God order rain?) appears hundreds of times in Yinxu bones."
+    "funFact": "In divination questions, '帝其令雨' (Will the High God order rain?) appears hundreds of times in Yinxu bones.",
+    "difficulty": "medium"
   },
   {
     "id": "char_shi",
@@ -333,7 +340,8 @@
         "glyph": "石"
       }
     ],
-    "funFact": "Early musical instruments called '磬' (lithophones) were tuned stone chimes suspended from wooden frames."
+    "funFact": "Early musical instruments called '磬' (lithophones) were tuned stone chimes suspended from wooden frames.",
+    "difficulty": "medium"
   },
   {
     "id": "char_tu",
@@ -375,7 +383,8 @@
         "glyph": "土"
       }
     ],
-    "funFact": "Sacrifices to the god of the soil ('社') were paired with offerings to the grain deity ('稷'), creating the word '社稷' for the nation."
+    "funFact": "Sacrifices to the god of the soil ('社') were paired with offerings to the grain deity ('稷'), creating the word '社稷' for the nation.",
+    "difficulty": "medium"
   },
   {
     "id": "char_niu",
@@ -417,7 +426,8 @@
         "glyph": "牛"
       }
     ],
-    "funFact": "Cattle shoulder blades (scapulae) were the primary material used by Shang kings to carve divination inscriptions."
+    "funFact": "Cattle shoulder blades (scapulae) were the primary material used by Shang kings to carve divination inscriptions.",
+    "difficulty": "easy"
   },
   {
     "id": "char_yang",
@@ -459,7 +469,8 @@
         "glyph": "羊"
       }
     ],
-    "funFact": "Because sheep were considered docile and tasty, '羊' forms the root of characters for beauty ('美', a big sheep) and goodness ('善')."
+    "funFact": "Because sheep were considered docile and tasty, '羊' forms the root of characters for beauty ('美', a big sheep) and goodness ('善').",
+    "difficulty": "easy"
   },
   {
     "id": "char_ma",
@@ -501,7 +512,8 @@
         "glyph": "马"
       }
     ],
-    "funFact": "Chariot horses were burial status symbols for Shang aristocracy discovered intact in Anyang chariot pits."
+    "funFact": "Chariot horses were burial status symbols for Shang aristocracy discovered intact in Anyang chariot pits.",
+    "difficulty": "easy"
   },
   {
     "id": "char_yu_fish",
@@ -543,7 +555,8 @@
         "glyph": "鱼"
       }
     ],
-    "funFact": "Because '鱼' (yú) is a homophone for '余' (abundance), fish remain a timeless Chinese symbol for New Year prosperity."
+    "funFact": "Because '鱼' (yú) is a homophone for '余' (abundance), fish remain a timeless Chinese symbol for New Year prosperity.",
+    "difficulty": "easy"
   },
   {
     "id": "char_niao",
@@ -585,7 +598,8 @@
         "glyph": "鸟"
       }
     ],
-    "funFact": "The mythical origin poem of the Shang dynasty declares: '天命玄鸟，降而生商' (Heaven commanded the black bird to descend and give birth to Shang)."
+    "funFact": "The mythical origin poem of the Shang dynasty declares: '天命玄鸟，降而生商' (Heaven commanded the black bird to descend and give birth to Shang).",
+    "difficulty": "easy"
   },
   {
     "id": "char_hu",
@@ -627,7 +641,8 @@
         "glyph": "虎"
       }
     ],
-    "funFact": "Shang bronze vessels often feature a motif known as 'tiger devouring human' (虎食人卣) representing shamanic protection."
+    "funFact": "Shang bronze vessels often feature a motif known as 'tiger devouring human' (虎食人卣) representing shamanic protection.",
+    "difficulty": "medium"
   },
   {
     "id": "char_lu",
@@ -669,7 +684,8 @@
         "glyph": "鹿"
       }
     ],
-    "funFact": "Hunting deer was a royal pastime; '逐鹿中原' (chasing deer in the central plains) later became an idiom for fighting for imperial rule."
+    "funFact": "Hunting deer was a royal pastime; '逐鹿中原' (chasing deer in the central plains) later became an idiom for fighting for imperial rule.",
+    "difficulty": "medium"
   },
   {
     "id": "char_gui",
@@ -711,7 +727,8 @@
         "glyph": "龟"
       }
     ],
-    "funFact": "Turtles were revered as sacred cosmic creatures whose shells mimicked heaven (round dome) and earth (flat belly)."
+    "funFact": "Turtles were revered as sacred cosmic creatures whose shells mimicked heaven (round dome) and earth (flat belly).",
+    "difficulty": "medium"
   },
   {
     "id": "char_ren",
@@ -753,7 +770,8 @@
         "glyph": "人"
       }
     ],
-    "funFact": "In oracle bone inscriptions, a person viewed from the front with outstretched limbs became '大' (big/adult)."
+    "funFact": "In oracle bone inscriptions, a person viewed from the front with outstretched limbs became '大' (big/adult).",
+    "difficulty": "easy"
   },
   {
     "id": "char_mu",
@@ -795,7 +813,8 @@
         "glyph": "目"
       }
     ],
-    "funFact": "When scribes wrote on vertical bamboo slips, wide horizontal characters like '目' were turned 90 degrees to fit comfortably."
+    "funFact": "When scribes wrote on vertical bamboo slips, wide horizontal characters like '目' were turned 90 degrees to fit comfortably.",
+    "difficulty": "medium"
   },
   {
     "id": "char_kou",
@@ -837,7 +856,8 @@
         "glyph": "口"
       }
     ],
-    "funFact": "'口' is one of the most prolific components in the Chinese language, forming parts of over 1,000 characters."
+    "funFact": "'口' is one of the most prolific components in the Chinese language, forming parts of over 1,000 characters.",
+    "difficulty": "easy"
   },
   {
     "id": "char_er",
@@ -879,7 +899,8 @@
         "glyph": "耳"
       }
     ],
-    "funFact": "Combining '耳' (ear) and '口' (mouth) with a heart creates the character '聪' (smart/intelligent — one who listens and observes)."
+    "funFact": "Combining '耳' (ear) and '口' (mouth) with a heart creates the character '聪' (smart/intelligent — one who listens and observes).",
+    "difficulty": "easy"
   },
   {
     "id": "char_shou",
@@ -921,7 +942,8 @@
         "glyph": "手"
       }
     ],
-    "funFact": "When used as a radical on the left side of action verbs, '手' simplifies into the familiar '扌' (pick, hold, strike)."
+    "funFact": "When used as a radical on the left side of action verbs, '手' simplifies into the familiar '扌' (pick, hold, strike).",
+    "difficulty": "easy"
   },
   {
     "id": "char_zi",
@@ -963,7 +985,8 @@
         "glyph": "子"
       }
     ],
-    "funFact": "'子' evolved from infant to an honorific title for venerable philosophers, such as 孔子 (Confucius) and 老子 (Laozi)."
+    "funFact": "'子' evolved from infant to an honorific title for venerable philosophers, such as 孔子 (Confucius) and 老子 (Laozi).",
+    "difficulty": "medium"
   },
   {
     "id": "char_nv",
@@ -1005,7 +1028,8 @@
         "glyph": "女"
       }
     ],
-    "funFact": "Queen Fu Hao (妇好), wife of Shang King Wu Ding, was a legendary female general who led 13,000 soldiers into battle."
+    "funFact": "Queen Fu Hao (妇好), wife of Shang King Wu Ding, was a legendary female general who led 13,000 soldiers into battle.",
+    "difficulty": "medium"
   },
   {
     "id": "char_xin",
@@ -1047,7 +1071,8 @@
         "glyph": "心"
       }
     ],
-    "funFact": "Ancient Chinese believed thinking occurred in the heart rather than the brain; thus words like '思' (think) contain '心'."
+    "funFact": "Ancient Chinese believed thinking occurred in the heart rather than the brain; thus words like '思' (think) contain '心'.",
+    "difficulty": "medium"
   },
   {
     "id": "char_mu_wood",
@@ -1089,7 +1114,8 @@
         "glyph": "木"
       }
     ],
-    "funFact": "Two trees side by side create '林' (woods), while three trees create '森' (deep dense forest)."
+    "funFact": "Two trees side by side create '林' (woods), while three trees create '森' (deep dense forest).",
+    "difficulty": "easy"
   },
   {
     "id": "char_tian",
@@ -1131,7 +1157,8 @@
         "glyph": "田"
       }
     ],
-    "funFact": "Combined with '力' (plow/strength), '田' + '力' forms '男' (man) — one who works the field."
+    "funFact": "Combined with '力' (plow/strength), '田' + '力' forms '男' (man) — one who works the field.",
+    "difficulty": "medium"
   },
   {
     "id": "char_he",
@@ -1173,7 +1200,8 @@
         "glyph": "禾"
       }
     ],
-    "funFact": "Millet (谷子) was the primary staple food crop supporting the Yellow River Shang civilization."
+    "funFact": "Millet (谷子) was the primary staple food crop supporting the Yellow River Shang civilization.",
+    "difficulty": "medium"
   },
   {
     "id": "char_zhu",
@@ -1215,7 +1243,8 @@
         "glyph": "竹"
       }
     ],
-    "funFact": "Before paper was invented, books were written on slender bamboo strips called '简' (slips) tied with hemp string."
+    "funFact": "Before paper was invented, books were written on slender bamboo strips called '简' (slips) tied with hemp string.",
+    "difficulty": "medium"
   },
   {
     "id": "char_men",
@@ -1257,7 +1286,8 @@
         "glyph": "门"
       }
     ],
-    "funFact": "A single swinging door was called '户', while double doors were called '门'."
+    "funFact": "A single swinging door was called '户', while double doors were called '门'.",
+    "difficulty": "easy"
   },
   {
     "id": "char_che",
@@ -1299,7 +1329,8 @@
         "glyph": "车"
       }
     ],
-    "funFact": "Archaeological excavations at Yinxu have unearthed actual chariots matching this oracle bone character's layout precisely."
+    "funFact": "Archaeological excavations at Yinxu have unearthed actual chariots matching this oracle bone character's layout precisely.",
+    "difficulty": "medium"
   },
   {
     "id": "char_zhou",
@@ -1341,7 +1372,8 @@
         "glyph": "舟"
       }
     ],
-    "funFact": "Shang people navigated the Huan and Yellow Rivers using these wooden boats for transport and trade."
+    "funFact": "Shang people navigated the Huan and Yellow Rivers using these wooden boats for transport and trade.",
+    "difficulty": "medium"
   },
   {
     "id": "char_dao",
@@ -1383,7 +1415,8 @@
         "glyph": "刀"
       }
     ],
-    "funFact": "Oracle bone inscriptions themselves were incised directly into bone and shell using sharp bronze carving knives."
+    "funFact": "Oracle bone inscriptions themselves were incised directly into bone and shell using sharp bronze carving knives.",
+    "difficulty": "easy"
   },
   {
     "id": "char_gong",
@@ -1425,7 +1458,8 @@
         "glyph": "弓"
       }
     ],
-    "funFact": "Archery (射) was one of the Six Classical Arts required of all educated nobility in ancient China."
+    "funFact": "Archery (射) was one of the Six Classical Arts required of all educated nobility in ancient China.",
+    "difficulty": "easy"
   },
   {
     "id": "char_shi_arrow",
@@ -1467,7 +1501,8 @@
         "glyph": "矢"
       }
     ],
-    "funFact": "Because an arrow flies straight and true, '矢' also came to mean 'pledge' or 'truth' (as in 矢志不渝)."
+    "funFact": "Because an arrow flies straight and true, '矢' also came to mean 'pledge' or 'truth' (as in 矢志不渝).",
+    "difficulty": "medium"
   },
   {
     "id": "char_ding",
@@ -1509,7 +1544,8 @@
         "glyph": "鼎"
       }
     ],
-    "funFact": "The Houmuwu Ding (后母戊鼎) unearthed at Yinxu weighs 832.84 kg, making it the largest ancient bronze vessel in world history."
+    "funFact": "The Houmuwu Ding (后母戊鼎) unearthed at Yinxu weighs 832.84 kg, making it the largest ancient bronze vessel in world history.",
+    "difficulty": "hard"
   },
   {
     "id": "char_wang",
@@ -1551,7 +1587,8 @@
         "glyph": "网"
       }
     ],
-    "funFact": "Legend says the culture hero Fuxi invented fishing nets by observing spiders weaving their webs."
+    "funFact": "Legend says the culture hero Fuxi invented fishing nets by observing spiders weaving their webs.",
+    "difficulty": "easy"
   },
   {
     "id": "char_hu_pot",
@@ -1593,7 +1630,8 @@
         "glyph": "壶"
       }
     ],
-    "funFact": "Shang banquets made extensive use of heated millet wine poured from decorated bronze pots."
+    "funFact": "Shang banquets made extensive use of heated millet wine poured from decorated bronze pots.",
+    "difficulty": "medium"
   },
   {
     "id": "char_ge",
@@ -1635,7 +1673,8 @@
         "glyph": "戈"
       }
     ],
-    "funFact": "Joining '止' (foot/stop) with '戈' (weapon) forms the character '武' (martial/military) — traditionally interpreted as 'stopping the spear' (止戈为武)."
+    "funFact": "Joining '止' (foot/stop) with '戈' (weapon) forms the character '武' (martial/military) — traditionally interpreted as 'stopping the spear' (止戈为武).",
+    "difficulty": "medium"
   },
   {
     "id": "char_san",
@@ -1677,7 +1716,8 @@
         "glyph": "伞"
       }
     ],
-    "funFact": "Bronze carriage fittings from early dynastic tombs had intricate folding gears to collapse these umbrellas."
+    "funFact": "Bronze carriage fittings from early dynastic tombs had intricate folding gears to collapse these umbrellas.",
+    "difficulty": "easy"
   },
   {
     "id": "char_lei",
@@ -1719,7 +1759,8 @@
         "glyph": "雷"
       }
     ],
-    "funFact": "Ancient diviners attributed thunder to the celestial battle drums of the Thunder God (雷公)."
+    "funFact": "Ancient diviners attributed thunder to the celestial battle drums of the Thunder God (雷公).",
+    "difficulty": "medium"
   },
   {
     "id": "char_quan",
@@ -1761,7 +1802,8 @@
         "glyph": "犬"
       }
     ],
-    "funFact": "Trained hunting hounds were prized companions for Shang royal expeditions into the wilderness."
+    "funFact": "Trained hunting hounds were prized companions for Shang royal expeditions into the wilderness.",
+    "difficulty": "medium"
   },
   {
     "id": "char_shi_pig",
@@ -1803,7 +1845,8 @@
         "glyph": "豕"
       }
     ],
-    "funFact": "Placing a pig ('豕') under a roof ('宀') created the character '家' (home) — a home in antiquity was defined by livestock."
+    "funFact": "Placing a pig ('豕') under a roof ('宀') created the character '家' (home) — a home in antiquity was defined by livestock.",
+    "difficulty": "medium"
   },
   {
     "id": "char_xiang",
@@ -1845,7 +1888,8 @@
         "glyph": "象"
       }
     ],
-    "funFact": "During the Shang dynasty, the Central Plains climate was warmer, and wild Asian elephants roamed Henan (Henan's nickname is still 豫, a person with an elephant)."
+    "funFact": "During the Shang dynasty, the Central Plains climate was warmer, and wild Asian elephants roamed Henan (Henan's nickname is still 豫, a person with an elephant).",
+    "difficulty": "medium"
   },
   {
     "id": "char_da",
@@ -1887,7 +1931,8 @@
         "glyph": "大"
       }
     ],
-    "funFact": "Adding a horizontal stroke above '大' indicates the celestial firmament above human heads, creating '天' (Heaven)."
+    "funFact": "Adding a horizontal stroke above '大' indicates the celestial firmament above human heads, creating '天' (Heaven).",
+    "difficulty": "medium"
   },
   {
     "id": "char_shou_head",
@@ -1929,7 +1974,8 @@
         "glyph": "首"
       }
     ],
-    "funFact": "From the physical head, '首' came to signify leader, foremost, and primary (as in 首相, 首席)."
+    "funFact": "From the physical head, '首' came to signify leader, foremost, and primary (as in 首相, 首席).",
+    "difficulty": "medium"
   },
   {
     "id": "char_zu",
@@ -1971,7 +2017,8 @@
         "glyph": "足"
       }
     ],
-    "funFact": "When walking reaches its destination, it is 'complete', giving '足' its secondary meaning of 'enough' or 'sufficient' (充足)."
+    "funFact": "When walking reaches its destination, it is 'complete', giving '足' its secondary meaning of 'enough' or 'sufficient' (充足).",
+    "difficulty": "medium"
   },
   {
     "id": "char_lin",
@@ -2013,7 +2060,8 @@
         "glyph": "林"
       }
     ],
-    "funFact": "The doubling of pictographs is an ancient linguistic device called reduplication."
+    "funFact": "The doubling of pictographs is an ancient linguistic device called reduplication.",
+    "difficulty": "medium"
   },
   {
     "id": "char_gu",
@@ -2055,7 +2103,8 @@
         "glyph": "鼓"
       }
     ],
-    "funFact": "Shang drums made with alligator leather (鼍鼓) produced deep resonant acoustic booms across battlefields."
+    "funFact": "Shang drums made with alligator leather (鼍鼓) produced deep resonant acoustic booms across battlefields.",
+    "difficulty": "medium"
   },
   {
     "id": "char_cai",
@@ -2097,7 +2146,8 @@
         "glyph": "采"
       }
     ],
-    "funFact": "The famous opening ode of the Classic of Poetry sings: '参差荇菜，左右采之' (Trailing water lilies, gather them left and right)."
+    "funFact": "The famous opening ode of the Classic of Poetry sings: '参差荇菜，左右采之' (Trailing water lilies, gather them left and right).",
+    "difficulty": "medium"
   },
   {
     "id": "char_ming",
@@ -2139,6 +2189,910 @@
         "glyph": "明"
       }
     ],
-    "funFact": "The union of the two greatest celestial illuminators (sun and moon) defines radiant brilliance."
+    "funFact": "The union of the two greatest celestial illuminators (sun and moon) defines radiant brilliance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "char_xiu",
+    "modern": "休",
+    "pinyin": "xiū",
+    "category": "human",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Human & Life",
+      "zh": "人体生活"
+    },
+    "meaning": {
+      "en": "Rest / Cease",
+      "zh": "休息 / 止息"
+    },
+    "description": "A famous composite ideograph (会意字) showing a human (人) leaning under the protective shade of a tree (木) to rest after hard labor.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 32 30 C 32 30, 24 45, 24 75 M 32 46 C 36 60, 44 75, 44 75\" /><line x1=\"68\" y1=\"20\" x2=\"68\" y2=\"82\" stroke-width=\"5\" /><path d=\"M 52 42 Q 68 50, 84 42 M 52 75 Q 68 65, 84 75\" />\n  </g>\n</svg>",
+      "notes": "The person reclines against the tree trunk, perfectly visualizing respite."
+    },
+    "funFact": "In ancient Shang agricultural life, resting under trees was a vital respite during the scorching midday heat.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 32 30 C 32 30, 24 45, 24 75 M 32 46 C 36 60, 44 75, 44 75\" /><line x1=\"68\" y1=\"20\" x2=\"68\" y2=\"82\" stroke-width=\"5\" /><path d=\"M 52 42 Q 68 50, 84 42 M 52 75 Q 68 65, 84 75\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 32 30 C 32 30, 24 45, 24 75 M 32 46 C 36 60, 44 75, 44 75\" /><line x1=\"68\" y1=\"20\" x2=\"68\" y2=\"82\" stroke-width=\"5\" /><path d=\"M 52 42 Q 68 50, 84 42 M 52 75 Q 68 65, 84 75\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 32 30 C 32 30, 24 45, 24 75 M 32 46 C 36 60, 44 75, 44 75\" /><line x1=\"68\" y1=\"20\" x2=\"68\" y2=\"82\" stroke-width=\"5\" /><path d=\"M 52 42 Q 68 50, 84 42 M 52 75 Q 68 65, 84 75\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "休"
+      }
+    ]
+  },
+  {
+    "id": "char_ming_bird",
+    "modern": "鸣",
+    "pinyin": "míng",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Chirp / Bird Call",
+      "zh": "鸣叫 / 禽啼"
+    },
+    "description": "Combines an open crying mouth (口) with a perched bird (鸟), visually capturing the call or alarm cry of birds.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <rect x=\"18\" y=\"32\" width=\"18\" height=\"22\" rx=\"4\" /><path d=\"M 60 22 C 60 16, 72 16, 72 24 C 72 32, 60 36, 60 48 L 60 76 M 60 32 L 84 32 C 84 50, 72 65, 60 65 M 68 76 L 68 84\" />\n  </g>\n</svg>",
+      "notes": "The mouth is deliberately placed in front of the bird's beak."
+    },
+    "funFact": "Birds crying out or fleeing trees were recorded by Shang diviners as omens regarding approaching rain storms.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <rect x=\"18\" y=\"32\" width=\"18\" height=\"22\" rx=\"4\" /><path d=\"M 60 22 C 60 16, 72 16, 72 24 C 72 32, 60 36, 60 48 L 60 76 M 60 32 L 84 32 C 84 50, 72 65, 60 65 M 68 76 L 68 84\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <rect x=\"18\" y=\"32\" width=\"18\" height=\"22\" rx=\"4\" /><path d=\"M 60 22 C 60 16, 72 16, 72 24 C 72 32, 60 36, 60 48 L 60 76 M 60 32 L 84 32 C 84 50, 72 65, 60 65 M 68 76 L 68 84\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <rect x=\"18\" y=\"32\" width=\"18\" height=\"22\" rx=\"4\" /><path d=\"M 60 22 C 60 16, 72 16, 72 24 C 72 32, 60 36, 60 48 L 60 76 M 60 32 L 84 32 C 84 50, 72 65, 60 65 M 68 76 L 68 84\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "鸣"
+      }
+    ]
+  },
+  {
+    "id": "char_she_wade",
+    "modern": "涉",
+    "pinyin": "shè",
+    "category": "nature",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Nature & Cosmos",
+      "zh": "自然天象"
+    },
+    "meaning": {
+      "en": "Wade / Cross Stream",
+      "zh": "涉水 / 趟河"
+    },
+    "description": "Features two human footprints (止) striding directly through ripples of flowing river water (水), showing a river crossing.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 50 18 Q 44 48, 50 82 M 40 28 Q 36 50, 40 72 M 60 28 Q 64 50, 60 72\" stroke-width=\"4.5\" /><path d=\"M 22 36 L 22 55 M 22 45 L 30 40 M 76 50 L 76 70 M 76 60 L 68 55\" />\n  </g>\n</svg>",
+      "notes": "Footprints flanking both sides of the stream."
+    },
+    "funFact": "Without bridges over the Huan River at Anyang, Shang royal armies regularly waded across shallow shoals.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 50 18 Q 44 48, 50 82 M 40 28 Q 36 50, 40 72 M 60 28 Q 64 50, 60 72\" stroke-width=\"4.5\" /><path d=\"M 22 36 L 22 55 M 22 45 L 30 40 M 76 50 L 76 70 M 76 60 L 68 55\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 50 18 Q 44 48, 50 82 M 40 28 Q 36 50, 40 72 M 60 28 Q 64 50, 60 72\" stroke-width=\"4.5\" /><path d=\"M 22 36 L 22 55 M 22 45 L 30 40 M 76 50 L 76 70 M 76 60 L 68 55\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 50 18 Q 44 48, 50 82 M 40 28 Q 36 50, 40 72 M 60 28 Q 64 50, 60 72\" stroke-width=\"4.5\" /><path d=\"M 22 36 L 22 55 M 22 45 L 30 40 M 76 50 L 76 70 M 76 60 L 68 55\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "涉"
+      }
+    ]
+  },
+  {
+    "id": "char_zhu_chase",
+    "modern": "逐",
+    "pinyin": "zhú",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Pursue / Chase",
+      "zh": "追逐 / 围猎"
+    },
+    "description": "Depicts a running foot (止) chasing right behind a fleeing wild boar (豕), representing active tracking of game during royal hunts.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 30 25 L 30 48 M 30 36 L 40 30\" /><path d=\"M 55 45 C 55 35, 75 35, 78 45 C 78 65, 68 75, 55 75 L 55 45 M 78 48 L 88 45 M 60 75 L 60 85 M 72 75 L 72 85\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "The hunter's foot pursues the wild pig."
+    },
+    "funFact": "King Wu Ding's hunting divination bones extensively record 逐 in campaigns bagging boars, deer, and wild oxen.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 30 25 L 30 48 M 30 36 L 40 30\" /><path d=\"M 55 45 C 55 35, 75 35, 78 45 C 78 65, 68 75, 55 75 L 55 45 M 78 48 L 88 45 M 60 75 L 60 85 M 72 75 L 72 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 30 25 L 30 48 M 30 36 L 40 30\" /><path d=\"M 55 45 C 55 35, 75 35, 78 45 C 78 65, 68 75, 55 75 L 55 45 M 78 48 L 88 45 M 60 75 L 60 85 M 72 75 L 72 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 30 25 L 30 48 M 30 36 L 40 30\" /><path d=\"M 55 45 C 55 35, 75 35, 78 45 C 78 65, 68 75, 55 75 L 55 45 M 78 48 L 88 45 M 60 75 L 60 85 M 72 75 L 72 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "逐"
+      }
+    ]
+  },
+  {
+    "id": "char_she_shoot",
+    "modern": "射",
+    "pinyin": "shè",
+    "category": "tools",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Shoot / Archery",
+      "zh": "射箭 / 发射"
+    },
+    "description": "Depicts an arrow (矢) notched onto a drawn composite bow (弓) and drawn by a steady hand (又).",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 34 22 C 18 36, 18 64, 34 78\" /><line x1=\"24\" y1=\"50\" x2=\"72\" y2=\"50\" stroke-width=\"5\" /><path d=\"M 64 42 L 74 50 L 64 58\" /><path d=\"M 60 62 L 68 72 M 60 72 L 72 62\" stroke-width=\"4.5\" />\n  </g>\n</svg>",
+      "notes": "The dynamic tension of the drawn bowstring is clearly visible."
+    },
+    "funFact": "Archery was the preeminent military skill of the Shang warrior nobility, vital for hunting and territorial defense.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 34 22 C 18 36, 18 64, 34 78\" /><line x1=\"24\" y1=\"50\" x2=\"72\" y2=\"50\" stroke-width=\"5\" /><path d=\"M 64 42 L 74 50 L 64 58\" /><path d=\"M 60 62 L 68 72 M 60 72 L 72 62\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 34 22 C 18 36, 18 64, 34 78\" /><line x1=\"24\" y1=\"50\" x2=\"72\" y2=\"50\" stroke-width=\"5\" /><path d=\"M 64 42 L 74 50 L 64 58\" /><path d=\"M 60 62 L 68 72 M 60 72 L 72 62\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 34 22 C 18 36, 18 64, 34 78\" /><line x1=\"24\" y1=\"50\" x2=\"72\" y2=\"50\" stroke-width=\"5\" /><path d=\"M 64 42 L 74 50 L 64 58\" /><path d=\"M 60 62 L 68 72 M 60 72 L 72 62\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "射"
+      }
+    ]
+  },
+  {
+    "id": "char_lao_pen",
+    "modern": "牢",
+    "pinyin": "láo",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Enclosure / Animal Pen",
+      "zh": "牛牢 / 圈养"
+    },
+    "description": "Shows an ox with curved horns (牛) safely contained inside an enclosed wooden corral or stable (宀).",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 22 80 L 22 28 L 78 28 L 78 80\" stroke-width=\"5\" /><path d=\"M 40 44 C 40 38, 50 38, 50 50 M 60 44 C 60 38, 50 38, 50 50 M 50 50 L 50 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>",
+      "notes": "An ox protected inside stockade fencing."
+    },
+    "funFact": "The Shang court maintained massive sacrificial livestock pens (Tai-lao 太牢 and Shao-lao 少牢) for state divinations.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 22 80 L 22 28 L 78 28 L 78 80\" stroke-width=\"5\" /><path d=\"M 40 44 C 40 38, 50 38, 50 50 M 60 44 C 60 38, 50 38, 50 50 M 50 50 L 50 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 22 80 L 22 28 L 78 28 L 78 80\" stroke-width=\"5\" /><path d=\"M 40 44 C 40 38, 50 38, 50 50 M 60 44 C 60 38, 50 38, 50 50 M 50 50 L 50 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 22 80 L 22 28 L 78 28 L 78 80\" stroke-width=\"5\" /><path d=\"M 40 44 C 40 38, 50 38, 50 50 M 60 44 C 60 38, 50 38, 50 50 M 50 50 L 50 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "牢"
+      }
+    ]
+  },
+  {
+    "id": "char_long_dragon",
+    "modern": "龙",
+    "pinyin": "lóng",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Dragon / Divine Serpent",
+      "zh": "神龙 / 龙王"
+    },
+    "description": "An awe-inspiring Shang depiction of the mythical dragon with gaping jaws, antler-like horns, and a winding serpentine scaly body.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 42 22 L 42 32 M 36 26 L 48 26\" /><path d=\"M 32 36 C 32 28, 50 28, 55 36 C 60 45, 45 52, 45 60 C 45 74, 70 74, 75 62\" stroke-width=\"5\" /><circle cx=\"38\" cy=\"38\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>",
+      "notes": "The horned head and coiled tail define the classic Shang dragon motif."
+    },
+    "funFact": "Jade coiled dragons excavated from Fu Hao's tomb at Anyang match this exact Oracle Bone script form.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 42 22 L 42 32 M 36 26 L 48 26\" /><path d=\"M 32 36 C 32 28, 50 28, 55 36 C 60 45, 45 52, 45 60 C 45 74, 70 74, 75 62\" stroke-width=\"5\" /><circle cx=\"38\" cy=\"38\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 42 22 L 42 32 M 36 26 L 48 26\" /><path d=\"M 32 36 C 32 28, 50 28, 55 36 C 60 45, 45 52, 45 60 C 45 74, 70 74, 75 62\" stroke-width=\"5\" /><circle cx=\"38\" cy=\"38\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 42 22 L 42 32 M 36 26 L 48 26\" /><path d=\"M 32 36 C 32 28, 50 28, 55 36 C 60 45, 45 52, 45 60 C 45 74, 70 74, 75 62\" stroke-width=\"5\" /><circle cx=\"38\" cy=\"38\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "龙"
+      }
+    ]
+  },
+  {
+    "id": "char_feng_phoenix",
+    "modern": "凤",
+    "pinyin": "fèng",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Phoenix / Divine Bird",
+      "zh": "神凤 / 凤凰"
+    },
+    "description": "Depicts the mythical solar bird crowned with an ornamental crest atop its head, graceful body, and long flowing tail feathers.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 50 16 L 50 24 M 44 20 L 56 20\" /><path d=\"M 50 28 C 42 34, 42 46, 50 52 C 58 58, 58 70, 50 82\" stroke-width=\"5\" /><path d=\"M 50 36 C 65 36, 75 48, 75 60 C 75 75, 62 82, 50 82\" />\n  </g>\n</svg>",
+      "notes": "Distinguished from regular birds by its regal head crest."
+    },
+    "funFact": "In Shang divination theology, the Phoenix was the divine messenger associated with the warm South Wind.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 50 16 L 50 24 M 44 20 L 56 20\" /><path d=\"M 50 28 C 42 34, 42 46, 50 52 C 58 58, 58 70, 50 82\" stroke-width=\"5\" /><path d=\"M 50 36 C 65 36, 75 48, 75 60 C 75 75, 62 82, 50 82\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 50 16 L 50 24 M 44 20 L 56 20\" /><path d=\"M 50 28 C 42 34, 42 46, 50 52 C 58 58, 58 70, 50 82\" stroke-width=\"5\" /><path d=\"M 50 36 C 65 36, 75 48, 75 60 C 75 75, 62 82, 50 82\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 50 16 L 50 24 M 44 20 L 56 20\" /><path d=\"M 50 28 C 42 34, 42 46, 50 52 C 58 58, 58 70, 50 82\" stroke-width=\"5\" /><path d=\"M 50 36 C 65 36, 75 48, 75 60 C 75 75, 62 82, 50 82\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "凤"
+      }
+    ]
+  },
+  {
+    "id": "char_yan_swallow",
+    "modern": "燕",
+    "pinyin": "yàn",
+    "category": "animals",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Animals & Beasts",
+      "zh": "飞禽走兽"
+    },
+    "meaning": {
+      "en": "Swallow Bird",
+      "zh": "燕子 / 春燕"
+    },
+    "description": "Captures the distinctive silhouette of a swallow: spread pointed wings, round body, and bifurcated scissor-like tail.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <circle cx=\"50\" cy=\"24\" r=\"8\" /><path d=\"M 18 44 C 32 40, 50 44, 50 44 C 50 44, 68 40, 82 44\" stroke-width=\"5\" /><ellipse cx=\"50\" cy=\"54\" rx=\"10\" ry=\"14\" /><path d=\"M 44 68 L 32 85 M 56 68 L 68 85\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "The scissor-tail makes the swallow instantly identifiable."
+    },
+    "funFact": "Shang royal mythology traces their ancestral origin to the mythical black swallow (天命玄鸟，降而生商).",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <circle cx=\"50\" cy=\"24\" r=\"8\" /><path d=\"M 18 44 C 32 40, 50 44, 50 44 C 50 44, 68 40, 82 44\" stroke-width=\"5\" /><ellipse cx=\"50\" cy=\"54\" rx=\"10\" ry=\"14\" /><path d=\"M 44 68 L 32 85 M 56 68 L 68 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"50\" cy=\"24\" r=\"8\" /><path d=\"M 18 44 C 32 40, 50 44, 50 44 C 50 44, 68 40, 82 44\" stroke-width=\"5\" /><ellipse cx=\"50\" cy=\"54\" rx=\"10\" ry=\"14\" /><path d=\"M 44 68 L 32 85 M 56 68 L 68 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"50\" cy=\"24\" r=\"8\" /><path d=\"M 18 44 C 32 40, 50 44, 50 44 C 50 44, 68 40, 82 44\" stroke-width=\"5\" /><ellipse cx=\"50\" cy=\"54\" rx=\"10\" ry=\"14\" /><path d=\"M 44 68 L 32 85 M 56 68 L 68 85\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "燕"
+      }
+    ]
+  },
+  {
+    "id": "char_guan_wash",
+    "modern": "盥",
+    "pinyin": "guàn",
+    "category": "human",
+    "difficulty": "medium",
+    "categoryName": {
+      "en": "Human & Life",
+      "zh": "人体生活"
+    },
+    "meaning": {
+      "en": "Wash Hands / Ritual Cleansing",
+      "zh": "盥洗 / 净手"
+    },
+    "description": "Shows two hands washing over a ceremonial basin, letting pure water droplets cleanse the body before sacred temple rites.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <ellipse cx=\"50\" cy=\"68\" rx=\"34\" ry=\"12\" /><path d=\"M 32 30 L 32 48 M 26 38 L 32 44 M 68 30 L 68 48 M 74 38 L 68 44\" stroke-width=\"4.5\" /><circle cx=\"50\" cy=\"42\" r=\"3\" fill=\"currentColor\" /><circle cx=\"50\" cy=\"52\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>",
+      "notes": "Two hands rinsing over an oval washbasin."
+    },
+    "funFact": "Ritual purity was mandatory before handling sacred bones; ornate bronze basins (盘) were cast specifically for this duty.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <ellipse cx=\"50\" cy=\"68\" rx=\"34\" ry=\"12\" /><path d=\"M 32 30 L 32 48 M 26 38 L 32 44 M 68 30 L 68 48 M 74 38 L 68 44\" stroke-width=\"4.5\" /><circle cx=\"50\" cy=\"42\" r=\"3\" fill=\"currentColor\" /><circle cx=\"50\" cy=\"52\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <ellipse cx=\"50\" cy=\"68\" rx=\"34\" ry=\"12\" /><path d=\"M 32 30 L 32 48 M 26 38 L 32 44 M 68 30 L 68 48 M 74 38 L 68 44\" stroke-width=\"4.5\" /><circle cx=\"50\" cy=\"42\" r=\"3\" fill=\"currentColor\" /><circle cx=\"50\" cy=\"52\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <ellipse cx=\"50\" cy=\"68\" rx=\"34\" ry=\"12\" /><path d=\"M 32 30 L 32 48 M 26 38 L 32 44 M 68 30 L 68 48 M 74 38 L 68 44\" stroke-width=\"4.5\" /><circle cx=\"50\" cy=\"42\" r=\"3\" fill=\"currentColor\" /><circle cx=\"50\" cy=\"52\" r=\"3\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "盥"
+      }
+    ]
+  },
+  {
+    "id": "char_jue_vessel",
+    "modern": "爵",
+    "pinyin": "jué",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Ritual Wine Vessel",
+      "zh": "爵杯 / 青铜爵"
+    },
+    "description": "The definitive Shang bronze libation vessel: features a long pouring spout, tail, two column posts on the rim, and three splayed legs.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 28 28 L 28 44 C 28 54, 72 54, 72 44 L 72 28\" /><line x1=\"38\" y1=\"28\" x2=\"38\" y2=\"18\" stroke-width=\"5\" /><line x1=\"62\" y1=\"28\" x2=\"62\" y2=\"18\" stroke-width=\"5\" /><path d=\"M 34 52 L 24 82 M 50 54 L 50 82 M 66 52 L 76 82\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "Spout, rim posts, and tripod legs replicate bronze casting."
+    },
+    "funFact": "Used by Shang kings to warm and pour aromatic herbal wine as an offering to supreme deity Di (帝).",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 28 28 L 28 44 C 28 54, 72 54, 72 44 L 72 28\" /><line x1=\"38\" y1=\"28\" x2=\"38\" y2=\"18\" stroke-width=\"5\" /><line x1=\"62\" y1=\"28\" x2=\"62\" y2=\"18\" stroke-width=\"5\" /><path d=\"M 34 52 L 24 82 M 50 54 L 50 82 M 66 52 L 76 82\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 28 28 L 28 44 C 28 54, 72 54, 72 44 L 72 28\" /><line x1=\"38\" y1=\"28\" x2=\"38\" y2=\"18\" stroke-width=\"5\" /><line x1=\"62\" y1=\"28\" x2=\"62\" y2=\"18\" stroke-width=\"5\" /><path d=\"M 34 52 L 24 82 M 50 54 L 50 82 M 66 52 L 76 82\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 28 28 L 28 44 C 28 54, 72 54, 72 44 L 72 28\" /><line x1=\"38\" y1=\"28\" x2=\"38\" y2=\"18\" stroke-width=\"5\" /><line x1=\"62\" y1=\"28\" x2=\"62\" y2=\"18\" stroke-width=\"5\" /><path d=\"M 34 52 L 24 82 M 50 54 L 50 82 M 66 52 L 76 82\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "爵"
+      }
+    ]
+  },
+  {
+    "id": "char_li_cauldron",
+    "modern": "鬲",
+    "pinyin": "lì",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Hollow-Legged Tripod",
+      "zh": "陶鬲 / 鬲鼎"
+    },
+    "description": "An archaic cooking vessel with three bulbous hollow legs that maximized surface contact with hot fire coals.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"26\" y1=\"26\" x2=\"74\" y2=\"26\" stroke-width=\"6\" /><path d=\"M 32 26 C 24 50, 24 65, 30 82 C 38 82, 42 65, 50 56 C 58 65, 62 82, 70 82 C 76 65, 76 50, 68 26\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "The three hollow udder-like feet are the key identifying trait."
+    },
+    "funFact": "The hollow legs of the 鬲 were a brilliant prehistoric thermal engineering innovation in Chinese pottery.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"26\" y1=\"26\" x2=\"74\" y2=\"26\" stroke-width=\"6\" /><path d=\"M 32 26 C 24 50, 24 65, 30 82 C 38 82, 42 65, 50 56 C 58 65, 62 82, 70 82 C 76 65, 76 50, 68 26\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"26\" y1=\"26\" x2=\"74\" y2=\"26\" stroke-width=\"6\" /><path d=\"M 32 26 C 24 50, 24 65, 30 82 C 38 82, 42 65, 50 56 C 58 65, 62 82, 70 82 C 76 65, 76 50, 68 26\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"26\" y1=\"26\" x2=\"74\" y2=\"26\" stroke-width=\"6\" /><path d=\"M 32 26 C 24 50, 24 65, 30 82 C 38 82, 42 65, 50 56 C 58 65, 62 82, 70 82 C 76 65, 76 50, 68 26\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "鬲"
+      }
+    ]
+  },
+  {
+    "id": "char_fa_strike",
+    "modern": "伐",
+    "pinyin": "fá",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Slay / Strike with Halberd",
+      "zh": "征伐 / 砍斫"
+    },
+    "description": "Combines a human captive (人) with a dagger-axe halberd (戈) aimed at the neck, depicting punitive military expeditions.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 32 26 C 32 26, 26 45, 26 78 M 32 44 C 38 58, 44 78, 44 78\" /><circle cx=\"32\" cy=\"22\" r=\"6\" /><path d=\"M 72 22 L 72 82 M 42 36 L 72 36 M 52 48 L 72 48\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "Halberd blade positioned at the human neck."
+    },
+    "funFact": "Frequently inscribed on oracle bones detailing military expeditions (伐羌) against hostile western frontier tribes.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 32 26 C 32 26, 26 45, 26 78 M 32 44 C 38 58, 44 78, 44 78\" /><circle cx=\"32\" cy=\"22\" r=\"6\" /><path d=\"M 72 22 L 72 82 M 42 36 L 72 36 M 52 48 L 72 48\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 32 26 C 32 26, 26 45, 26 78 M 32 44 C 38 58, 44 78, 44 78\" /><circle cx=\"32\" cy=\"22\" r=\"6\" /><path d=\"M 72 22 L 72 82 M 42 36 L 72 36 M 52 48 L 72 48\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 32 26 C 32 26, 26 45, 26 78 M 32 44 C 38 58, 44 78, 44 78\" /><circle cx=\"32\" cy=\"22\" r=\"6\" /><path d=\"M 72 22 L 72 82 M 42 36 L 72 36 M 52 48 L 72 48\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "伐"
+      }
+    ]
+  },
+  {
+    "id": "char_si_sacrifice",
+    "modern": "祀",
+    "pinyin": "sì",
+    "category": "human",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Human & Life",
+      "zh": "人体生活"
+    },
+    "meaning": {
+      "en": "Sacrificial Rite / Annual Cycle",
+      "zh": "祭祀 / 岁祀"
+    },
+    "description": "Shows a spirit ancestral altar (示) beside a devout kneeling worshipper (巳), the root of ancestral veneration.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"24\" y1=\"24\" x2=\"52\" y2=\"24\" stroke-width=\"5\" /><line x1=\"38\" y1=\"24\" x2=\"38\" y2=\"78\" stroke-width=\"5\" /><path d=\"M 28 45 L 38 52 L 48 45\" /><path d=\"M 68 32 C 68 24, 80 24, 80 36 C 80 52, 64 60, 64 78 L 84 78\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "The altar table receives worship from the figure."
+    },
+    "funFact": "In the late Shang, 祀 also denoted a complete liturgical calendar year, serving as regnal dating.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"24\" y1=\"24\" x2=\"52\" y2=\"24\" stroke-width=\"5\" /><line x1=\"38\" y1=\"24\" x2=\"38\" y2=\"78\" stroke-width=\"5\" /><path d=\"M 28 45 L 38 52 L 48 45\" /><path d=\"M 68 32 C 68 24, 80 24, 80 36 C 80 52, 64 60, 64 78 L 84 78\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"24\" y1=\"24\" x2=\"52\" y2=\"24\" stroke-width=\"5\" /><line x1=\"38\" y1=\"24\" x2=\"38\" y2=\"78\" stroke-width=\"5\" /><path d=\"M 28 45 L 38 52 L 48 45\" /><path d=\"M 68 32 C 68 24, 80 24, 80 36 C 80 52, 64 60, 64 78 L 84 78\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"24\" y1=\"24\" x2=\"52\" y2=\"24\" stroke-width=\"5\" /><line x1=\"38\" y1=\"24\" x2=\"38\" y2=\"78\" stroke-width=\"5\" /><path d=\"M 28 45 L 38 52 L 48 45\" /><path d=\"M 68 32 C 68 24, 80 24, 80 36 C 80 52, 64 60, 64 78 L 84 78\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "祀"
+      }
+    ]
+  },
+  {
+    "id": "char_qi_notch",
+    "modern": "契",
+    "pinyin": "qì",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Carve / Divination Notch",
+      "zh": "刻契 / 契约"
+    },
+    "description": "Depicts an incising knife scoring record-keeping tallies or divination grooving notches into wooden or bone slats.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"28\" y1=\"24\" x2=\"28\" y2=\"58\" /><line x1=\"20\" y1=\"34\" x2=\"36\" y2=\"34\" /><line x1=\"20\" y1=\"46\" x2=\"36\" y2=\"46\" /><path d=\"M 58 20 L 58 78 C 58 84, 72 84, 72 78 L 72 20\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "Notched tally slat alongside the carving blade."
+    },
+    "funFact": "Before pyromancy, diviners chiseled hollow grooves (契) into the reverse of turtle shells to guide cracking.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"28\" y1=\"24\" x2=\"28\" y2=\"58\" /><line x1=\"20\" y1=\"34\" x2=\"36\" y2=\"34\" /><line x1=\"20\" y1=\"46\" x2=\"36\" y2=\"46\" /><path d=\"M 58 20 L 58 78 C 58 84, 72 84, 72 78 L 72 20\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"28\" y1=\"24\" x2=\"28\" y2=\"58\" /><line x1=\"20\" y1=\"34\" x2=\"36\" y2=\"34\" /><line x1=\"20\" y1=\"46\" x2=\"36\" y2=\"46\" /><path d=\"M 58 20 L 58 78 C 58 84, 72 84, 72 78 L 72 20\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"28\" y1=\"24\" x2=\"28\" y2=\"58\" /><line x1=\"20\" y1=\"34\" x2=\"36\" y2=\"34\" /><line x1=\"20\" y1=\"46\" x2=\"36\" y2=\"46\" /><path d=\"M 58 20 L 58 78 C 58 84, 72 84, 72 78 L 72 20\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "契"
+      }
+    ]
+  },
+  {
+    "id": "char_mo_dusk",
+    "modern": "莫",
+    "pinyin": "mò",
+    "category": "nature",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Nature & Cosmos",
+      "zh": "自然天象"
+    },
+    "meaning": {
+      "en": "Dusk / Sunset in Grass",
+      "zh": "日落 / 暮色"
+    },
+    "description": "Original character for 暮 (dusk): depicts the solar disc (日) setting low beneath tall grassland thickets (艸).",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <circle cx=\"50\" cy=\"50\" r=\"16\" /><line x1=\"42\" y1=\"50\" x2=\"58\" y2=\"50\" stroke-width=\"4\" /><path d=\"M 28 22 L 28 36 M 22 28 L 34 28 M 72 22 L 72 36 M 66 28 L 78 28\" stroke-width=\"4.5\" /><path d=\"M 28 66 L 28 80 M 22 72 L 34 72 M 72 66 L 72 80 M 66 72 L 78 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>",
+      "notes": "The sun is surrounded by grass clumps above and below."
+    },
+    "funFact": "Shang day-reckoning split daylight into segments; 莫 marked the dim dusk hour when court divinations ceased.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <circle cx=\"50\" cy=\"50\" r=\"16\" /><line x1=\"42\" y1=\"50\" x2=\"58\" y2=\"50\" stroke-width=\"4\" /><path d=\"M 28 22 L 28 36 M 22 28 L 34 28 M 72 22 L 72 36 M 66 28 L 78 28\" stroke-width=\"4.5\" /><path d=\"M 28 66 L 28 80 M 22 72 L 34 72 M 72 66 L 72 80 M 66 72 L 78 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"50\" cy=\"50\" r=\"16\" /><line x1=\"42\" y1=\"50\" x2=\"58\" y2=\"50\" stroke-width=\"4\" /><path d=\"M 28 22 L 28 36 M 22 28 L 34 28 M 72 22 L 72 36 M 66 28 L 78 28\" stroke-width=\"4.5\" /><path d=\"M 28 66 L 28 80 M 22 72 L 34 72 M 72 66 L 72 80 M 66 72 L 78 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"50\" cy=\"50\" r=\"16\" /><line x1=\"42\" y1=\"50\" x2=\"58\" y2=\"50\" stroke-width=\"4\" /><path d=\"M 28 22 L 28 36 M 22 28 L 34 28 M 72 22 L 72 36 M 66 28 L 78 28\" stroke-width=\"4.5\" /><path d=\"M 28 66 L 28 80 M 22 72 L 34 72 M 72 66 L 72 80 M 66 72 L 78 72\" stroke-width=\"4.5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "莫"
+      }
+    ]
+  },
+  {
+    "id": "char_dou_ladle",
+    "modern": "斗",
+    "pinyin": "dǒu",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Ladle / Dipper / Measure",
+      "zh": "量斗 / 北斗"
+    },
+    "description": "Depicts a deep grain scoop with an elongated pouring handle, which inspired the name for the Big Dipper constellation.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <rect x=\"22\" y=\"24\" width=\"34\" height=\"28\" rx=\"4\" stroke-width=\"5\" /><line x1=\"56\" y1=\"52\" x2=\"84\" y2=\"80\" stroke-width=\"6\" /><line x1=\"84\" y1=\"80\" x2=\"88\" y2=\"76\" stroke-width=\"5\" />\n  </g>\n</svg>",
+      "notes": "The bowl and angled handle formed the standard grain scoop."
+    },
+    "funFact": "Shang astronomers mapped the North Star and Ursa Major ladle to align royal palace architecture to true north.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <rect x=\"22\" y=\"24\" width=\"34\" height=\"28\" rx=\"4\" stroke-width=\"5\" /><line x1=\"56\" y1=\"52\" x2=\"84\" y2=\"80\" stroke-width=\"6\" /><line x1=\"84\" y1=\"80\" x2=\"88\" y2=\"76\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <rect x=\"22\" y=\"24\" width=\"34\" height=\"28\" rx=\"4\" stroke-width=\"5\" /><line x1=\"56\" y1=\"52\" x2=\"84\" y2=\"80\" stroke-width=\"6\" /><line x1=\"84\" y1=\"80\" x2=\"88\" y2=\"76\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <rect x=\"22\" y=\"24\" width=\"34\" height=\"28\" rx=\"4\" stroke-width=\"5\" /><line x1=\"56\" y1=\"52\" x2=\"84\" y2=\"80\" stroke-width=\"6\" /><line x1=\"84\" y1=\"80\" x2=\"88\" y2=\"76\" stroke-width=\"5\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "斗"
+      }
+    ]
+  },
+  {
+    "id": "char_ren_blade",
+    "modern": "刃",
+    "pinyin": "rèn",
+    "category": "tools",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Tools & Objects",
+      "zh": "器物礼器"
+    },
+    "meaning": {
+      "en": "Blade Edge",
+      "zh": "刀刃 / 锋芒"
+    },
+    "description": "An indicative symbol (指事字): draws a sharp curved knife (刀) with a prominent dot accentuating its razor cutting edge.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 44 18 L 44 50 C 44 70, 28 82, 28 82 L 52 82 C 64 70, 64 50, 64 18 Z\" stroke-width=\"5\" /><circle cx=\"34\" cy=\"50\" r=\"5\" fill=\"currentColor\" />\n  </g>\n</svg>",
+      "notes": "The dot highlights the sharp cutting edge of the knife."
+    },
+    "funFact": "Shang bronze knives discovered at Yinxu show high tin alloy ratios specifically along the edge for razor sharpness.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 44 18 L 44 50 C 44 70, 28 82, 28 82 L 52 82 C 64 70, 64 50, 64 18 Z\" stroke-width=\"5\" /><circle cx=\"34\" cy=\"50\" r=\"5\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 44 18 L 44 50 C 44 70, 28 82, 28 82 L 52 82 C 64 70, 64 50, 64 18 Z\" stroke-width=\"5\" /><circle cx=\"34\" cy=\"50\" r=\"5\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 44 18 L 44 50 C 44 70, 28 82, 28 82 L 52 82 C 64 70, 64 50, 64 18 Z\" stroke-width=\"5\" /><circle cx=\"34\" cy=\"50\" r=\"5\" fill=\"currentColor\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "刃"
+      }
+    ]
+  },
+  {
+    "id": "char_ben_root",
+    "modern": "本",
+    "pinyin": "běn",
+    "category": "plants",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Plants & Flora",
+      "zh": "植物花草"
+    },
+    "meaning": {
+      "en": "Root / Origin",
+      "zh": "树根 / 根本"
+    },
+    "description": "An indicative character: shows a tree (木) with an added horizontal stroke marking the subterranean base roots.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"50\" y1=\"16\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 22 38 Q 50 48, 78 38 M 22 74 Q 50 62, 78 74\" /><line x1=\"32\" y1=\"84\" x2=\"68\" y2=\"84\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>",
+      "notes": "The bottom bar emphasizes the underground root network."
+    },
+    "funFact": "The metaphor from physical tree root to philosophical 'origin' dates back to early Shang and Zhou thought.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"50\" y1=\"16\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 22 38 Q 50 48, 78 38 M 22 74 Q 50 62, 78 74\" /><line x1=\"32\" y1=\"84\" x2=\"68\" y2=\"84\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"50\" y1=\"16\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 22 38 Q 50 48, 78 38 M 22 74 Q 50 62, 78 74\" /><line x1=\"32\" y1=\"84\" x2=\"68\" y2=\"84\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"50\" y1=\"16\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 22 38 Q 50 48, 78 38 M 22 74 Q 50 62, 78 74\" /><line x1=\"32\" y1=\"84\" x2=\"68\" y2=\"84\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "本"
+      }
+    ]
+  },
+  {
+    "id": "char_mo_tip",
+    "modern": "末",
+    "pinyin": "mò",
+    "category": "plants",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Plants & Flora",
+      "zh": "植物花草"
+    },
+    "meaning": {
+      "en": "Treetop / End / Tip",
+      "zh": "树梢 / 末梢"
+    },
+    "description": "Contrasting with 本: draws a tree with a prominent horizontal bar placed across the highest branches, denoting the tip.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 24 44 Q 50 52, 76 44 M 24 76 Q 50 64, 76 76\" /><line x1=\"20\" y1=\"20\" x2=\"80\" y2=\"20\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>",
+      "notes": "The top bar points to the summit of the canopy."
+    },
+    "funFact": "Paired with 本 to form the classical phrase 本末 (origins and endings, essentials and incidentals).",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 24 44 Q 50 52, 76 44 M 24 76 Q 50 64, 76 76\" /><line x1=\"20\" y1=\"20\" x2=\"80\" y2=\"20\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 24 44 Q 50 52, 76 44 M 24 76 Q 50 64, 76 76\" /><line x1=\"20\" y1=\"20\" x2=\"80\" y2=\"20\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"84\" stroke-width=\"5\" /><path d=\"M 24 44 Q 50 52, 76 44 M 24 76 Q 50 64, 76 76\" /><line x1=\"20\" y1=\"20\" x2=\"80\" y2=\"20\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "末"
+      }
+    ]
+  },
+  {
+    "id": "char_gan_sweet",
+    "modern": "甘",
+    "pinyin": "gān",
+    "category": "human",
+    "difficulty": "hard",
+    "categoryName": {
+      "en": "Human & Life",
+      "zh": "人体生活"
+    },
+    "meaning": {
+      "en": "Sweet / Delicious",
+      "zh": "甘甜 / 美味"
+    },
+    "description": "An indicative ideograph depicting an open mouth (口) with a delectable food morsel held inside the lips, signifying sweetness.",
+    "oracle_bone": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 26 34 C 26 34, 50 22, 74 34 C 74 60, 62 76, 50 80 C 38 76, 26 60, 26 34 Z\" stroke-width=\"5\" /><line x1=\"36\" y1=\"48\" x2=\"64\" y2=\"48\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>",
+      "notes": "A mouth holding a tasty sweet object."
+    },
+    "funFact": "Shang royal banquets featured wild honey and sweet fermented millet wine, praised as pleasant to ancestral spirits.",
+    "evolution": [
+      {
+        "era": "商代 (~1200 BCE)",
+        "stage": "甲骨文 (Oracle Bone)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"oracle-glyph-svg\">\n  <defs>\n    <filter id=\"bone-glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"2\" flood-color=\"#d4af37\" flood-opacity=\"0.3\"/>\n    </filter>\n  </defs>\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#bone-glow)\">\n    <path d=\"M 26 34 C 26 34, 50 22, 74 34 C 74 60, 62 76, 50 80 C 38 76, 26 60, 26 34 Z\" stroke-width=\"5\" /><line x1=\"36\" y1=\"48\" x2=\"64\" y2=\"48\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "周代 (~1000 BCE)",
+        "stage": "金文 (Bronze Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg bronze-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e0a944\" stroke-width=\"5.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 26 34 C 26 34, 50 22, 74 34 C 74 60, 62 76, 50 80 C 38 76, 26 60, 26 34 Z\" stroke-width=\"5\" /><line x1=\"36\" y1=\"48\" x2=\"64\" y2=\"48\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "秦代 (~220 BCE)",
+        "stage": "小篆 (Seal Script)",
+        "glyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\" class=\"evolution-svg seal-glyph-svg\">\n  <g fill=\"none\" stroke=\"#e27d44\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M 26 34 C 26 34, 50 22, 74 34 C 74 60, 62 76, 50 80 C 38 76, 26 60, 26 34 Z\" stroke-width=\"5\" /><line x1=\"36\" y1=\"48\" x2=\"64\" y2=\"48\" stroke-width=\"6\" stroke=\"#ffb703\" />\n  </g>\n</svg>"
+      },
+      {
+        "era": "汉代至今",
+        "stage": "楷书 (Modern)",
+        "glyph": "甘"
+      }
+    ]
   }
 ]

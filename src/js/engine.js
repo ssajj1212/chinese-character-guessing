@@ -14,16 +14,21 @@ export class QuizEngine {
     this.currentQuestion = null;
     this.roundCount = 0;
     this.categoryFilter = 'all';
+    this.difficultyFilter = 'all';
   }
 
   setCategoryFilter(category) {
     this.categoryFilter = category || 'all';
   }
 
+  setDifficultyFilter(difficulty) {
+    this.difficultyFilter = difficulty || 'all';
+  }
+
   /**
    * Generates the next question.
    * If specificTargetId is provided, forces that character as the target.
-   * Otherwise respects categoryFilter and prioritizes unvisited characters.
+   * Otherwise respects categoryFilter and difficultyFilter, prioritizing unvisited characters.
    */
   nextQuestion(specificTargetId = null) {
     this.roundCount++;
@@ -34,12 +39,21 @@ export class QuizEngine {
     }
 
     if (!target) {
-      // Filter candidates by category if set
       let candidates = this.characters;
+
+      // Filter by category if set
       if (this.categoryFilter && this.categoryFilter !== 'all') {
-        const filtered = this.characters.filter(c => c.category === this.categoryFilter);
-        if (filtered.length >= 4) {
-          candidates = filtered;
+        const catFiltered = candidates.filter(c => c.category === this.categoryFilter);
+        if (catFiltered.length > 0) {
+          candidates = catFiltered;
+        }
+      }
+
+      // Filter by difficulty if set
+      if (this.difficultyFilter && this.difficultyFilter !== 'all') {
+        const diffFiltered = candidates.filter(c => c.difficulty === this.difficultyFilter);
+        if (diffFiltered.length > 0) {
+          candidates = diffFiltered;
         }
       }
 
@@ -52,7 +66,7 @@ export class QuizEngine {
       target = pool[Math.floor(Math.random() * pool.length)];
     }
 
-    // Track recently seen (keep last 5)
+    // Track recently seen (keep last 6)
     this.recentIds.push(target.id);
     if (this.recentIds.length > Math.min(6, this.characters.length - 1)) {
       this.recentIds.shift();
@@ -139,7 +153,10 @@ export class QuizEngine {
     let multiplier = this.state.getMultiplier();
 
     if (isCorrect) {
-      const base = 100;
+      const difficulty = currentCharacter.difficulty || 'easy';
+      const basePoints = { easy: 100, medium: 150, hard: 200 };
+      const base = basePoints[difficulty] || 100;
+
       const speedBonus = Math.round((Math.max(0, Math.min(15, remainingTimeSeconds)) / 15) * 50);
       scoreEarned = Math.round((base + speedBonus) * multiplier);
 
@@ -157,6 +174,7 @@ export class QuizEngine {
       selectedOption,
       correctOption,
       currentCharacter,
+      difficulty: currentCharacter.difficulty || 'easy',
       pinyin: currentCharacter.pinyin,
       modern: currentCharacter.modern,
       meaning: currentCharacter.meaning,
