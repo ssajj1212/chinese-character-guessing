@@ -1,0 +1,51 @@
+/**
+ * Ancient Oracle Bone Color & Design Tokens
+ * Bespoke palette: Obsidian rubbing stone, cinnabar vermilion, imperial gold, and aged parchment.
+ */
+
+:root {
+  /* Color Palette */
+  --bg-dark: #0d0c10;
+  --bg-surface: #17151e;
+  --bg-surface-elevated: #221f2c;
+  --bg-surface-translucent: rgba(28, 25, 38, 0.75);
+  
+  --rubbing-ink: #111014;
+  --bone-parchment: #25222e;
+  --bone-light: #f5eedc;
+  --bone-muted: #c2baa8;
+  
+  --cinnabar-red: #d13a2a;
+  --cinnabar-glow: rgba(209, 58, 42, 0.4);
+  --cinnabar-hover: #e04533;
+  
+  --imperial-gold: #d4af37;
+  --imperial-gold-bright: #f5d061;
+  --imperial-gold-dark: #8c7322;
+  --imperial-gold-glow: rgba(212, 175, 55, 0.35);
+  
+  --jade-green: #2a9d8f;
+  --jade-glow: rgba(42, 157, 143, 0.3);
+  
+  --text-primary: #f8f4eb;
+  --text-secondary: #b5ada0;
+  --text-muted: #787165;
+  --text-gold: #e6c86e;
+
+  /* Borders & Shadows */
+  --border-subtle: rgba(212, 175, 55, 0.15);
+  --border-active: rgba(212, 175, 55, 0.6);
+  --border-glow: 0 0 15px rgba(212, 175, 55, 0.25);
+  --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* Typography */
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", "STSong", serif;
+  --font-display: "Cinzel", "Noto Serif SC", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s var(--ease-smooth);
+  --transition-normal: 0.3s var(--ease-smooth);
+}

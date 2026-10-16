@@ -1,0 +1,120 @@
+@import './variables.css';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Level Up Ceremonial Banner */
+.level-up-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 9, 13, 0.9);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-smooth);
+}
+
+.level-up-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.level-up-content {
+  background: radial-gradient(circle at 50% 20%, #302b3d 0%, #171520 85%);
+  border: 2px solid var(--imperial-gold);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.4), 0 25px 60px rgba(0, 0, 0, 0.9);
+  animation: levelPop 0.5s var(--ease-smooth);
+}
+
+@keyframes levelPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.level-up-badge {
+  font-size: 3.5rem;
+  background: var(--bg-surface-elevated);
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--imperial-gold);
+  box-shadow: 0 0 25px var(--imperial-gold-glow);
+}
+
+.level-up-tag {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--cinnabar-red);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.level-up-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--imperial-gold-bright);
+}
+
+.level-up-desc {
+  font-size: 0.9rem;
+  color: var(--bone-light);
+  line-height: 1.6;
+}
+
+.level-up-dismiss-btn {
+  background: linear-gradient(135deg, var(--imperial-gold) 0%, #a8841a 100%);
+  color: #1a1720;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px var(--imperial-gold-glow);
+}
+
+.level-up-dismiss-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.5);
+}

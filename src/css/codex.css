@@ -1,0 +1,159 @@
+@import './variables.css';
+
+/* Ancient Codex / Museum Gallery Arena */
+.codex-arena {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.35s var(--ease-smooth);
+}
+
+.codex-header-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.codex-intro h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--imperial-gold-bright);
+}
+
+.codex-intro p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.codex-progress-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.6rem 1.1rem;
+}
+
+.progress-stats-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--imperial-gold-bright);
+}
+
+/* Category Filter Tabs */
+.codex-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  border-radius: 9999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-chip:hover {
+  border-color: var(--imperial-gold);
+  color: var(--text-primary);
+}
+
+.filter-chip.active {
+  background: var(--imperial-gold);
+  color: var(--bg-dark);
+  font-weight: 700;
+  border-color: var(--imperial-gold);
+  box-shadow: 0 2px 10px var(--imperial-gold-glow);
+}
+
+/* Character Tiles Grid */
+.codex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 1rem;
+}
+
+.codex-tile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+}
+
+/* Locked Mystery Stone Tablet */
+.codex-tile.locked {
+  background: #131217;
+  border-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.codex-tile.locked .tile-mystery-glyph {
+  font-size: 2rem;
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+}
+
+.codex-tile.locked .tile-modern-char {
+  color: var(--text-muted);
+  filter: blur(4px);
+  user-select: none;
+}
+
+/* Unlocked Jade/Bronze Tablet */
+.codex-tile.unlocked {
+  background: linear-gradient(145deg, #201e29 0%, #171520 100%);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: var(--shadow-card);
+}
+
+.codex-tile.unlocked:hover {
+  border-color: var(--imperial-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 15px var(--imperial-gold-glow);
+}
+
+.tile-oracle-svg {
+  width: 52px;
+  height: 52px;
+  color: var(--imperial-gold-bright);
+}
+
+.tile-modern-char {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tile-pinyin {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
