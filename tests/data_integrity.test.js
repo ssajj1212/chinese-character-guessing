@@ -34,4 +34,21 @@ describe('Character Dataset Integrity', () => {
     // Verify broad category diversity (Nature, Animals, Human, Plants, Tools)
     expect(categories.size).toBeGreaterThanOrEqual(4);
   });
+
+  it('evolution stages must have renderable SVGs for ancient scripts to prevent blank/tofu boxes', () => {
+    const raw = fs.readFileSync(dataPath, 'utf-8');
+    const characters = JSON.parse(raw);
+
+    for (const char of characters) {
+      expect(char.evolution.length).toBe(4);
+      // Stage 0: Oracle Bone (甲骨文) must be SVG
+      expect(char.evolution[0].glyph).toContain('<svg');
+      // Stage 1: Bronze Script (金文) must be SVG
+      expect(char.evolution[1].glyph).toContain('<svg');
+      // Stage 2: Small Seal Script (小篆) must be SVG
+      expect(char.evolution[2].glyph).toContain('<svg');
+      // Stage 3: Modern Regular Script (楷书) must be the modern character
+      expect(char.evolution[3].glyph).toBe(char.modern);
+    }
+  });
 });

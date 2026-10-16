@@ -22,7 +22,10 @@ describe('App Integration Flow', () => {
       const result = engine.submitAnswer(q.currentCharacter.id, 12);
       expect(result.correct).toBe(true);
       expect(state.isUnlocked(q.currentCharacter.id)).toBe(true);
-      expect(result.evolution.length).toBeGreaterThanOrEqual(3);
+      expect(result.evolution.length).toBe(4);
+      expect(result.evolution[0].glyph).toContain('<svg');
+      expect(result.evolution[1].glyph).toContain('<svg');
+      expect(result.evolution[2].glyph).toContain('<svg');
     }
 
     expect(state.score).toBeGreaterThan(300);
@@ -32,11 +35,10 @@ describe('App Integration Flow', () => {
 
   it('promotes scholar rank when reaching 400 XP', () => {
     let promoted = false;
-    state.on('levelUp', (lvl) => {
+    state.on('levelUp', () => {
       promoted = true;
     });
 
-    // Answer enough questions to pass 400 XP
     while (state.xp < 450) {
       const q = engine.nextQuestion();
       engine.submitAnswer(q.currentCharacter.id, 14);
@@ -44,5 +46,32 @@ describe('App Integration Flow', () => {
 
     expect(state.level).toBeGreaterThanOrEqual(2);
     expect(promoted).toBe(true);
+  });
+
+  it('allows challenging a targeted character directly from codex', () => {
+    const target = characters.find(c => c.category === 'animals');
+    expect(target).toBeDefined();
+
+    const q = engine.nextQuestion(target.id);
+    expect(q.currentCharacter.id).toBe(target.id);
+    expect(q.options.some(o => o.id === target.id && o.isCorrect)).toBe(true);
+
+    const result = engine.submitAnswer(target.id, 10);
+    expect(result.correct).toBe(true);
+    expect(state.isUnlocked(target.id)).toBe(true);
+  });
+
+  it('filters questions by category properly in play session', () => {
+    engine.setCategoryFilter('nature');
+    for (let i = 0; i < 5; i++) {
+      const q = engine.nextQuestion();
+      expect(q.currentCharacter.category).toBe('nature');
+    }
+
+    engine.setCategoryFilter('tools');
+    for (let i = 0; i < 5; i++) {
+      const q = engine.nextQuestion();
+      expect(q.currentCharacter.category).toBe('tools');
+    }
   });
 });

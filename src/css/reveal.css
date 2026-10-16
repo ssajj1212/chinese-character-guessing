@@ -30,12 +30,14 @@
   max-width: 620px;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 2rem 2.25rem;
+  padding: 1.5rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.15rem;
   transform: translateY(20px) scale(0.96);
   transition: transform 0.3s var(--ease-smooth);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
 }
 
 .reveal-modal-overlay.active .reveal-card {
@@ -198,6 +200,14 @@
   justify-content: center;
 }
 
+.stage-glyph-display svg {
+  width: 44px;
+  height: 44px;
+  max-width: 100%;
+  max-height: 48px;
+  display: block;
+}
+
 .stage-name {
   font-size: 0.72rem;
   color: var(--text-secondary);
@@ -229,15 +239,48 @@
   color: var(--imperial-gold-bright);
 }
 
-/* Action Button */
+/* Action Buttons */
+.modal-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.challenge-this-btn {
+  flex: 1;
+  background: linear-gradient(135deg, var(--imperial-gold) 0%, #b38f2a 100%);
+  color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.9rem;
+  border-radius: 14px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--imperial-gold-glow);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.challenge-this-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--imperial-gold-glow);
+  filter: brightness(1.1);
+}
+
 .next-question-btn {
+  flex: 1;
   background: linear-gradient(135deg, var(--cinnabar-red) 0%, #a82417 100%);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.95rem;
+  padding: 0.9rem;
   border-radius: 14px;
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 6px 20px var(--cinnabar-glow);

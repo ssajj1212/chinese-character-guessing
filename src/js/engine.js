@@ -13,24 +13,44 @@ export class QuizEngine {
     this.recentIds = [];
     this.currentQuestion = null;
     this.roundCount = 0;
+    this.categoryFilter = 'all';
+  }
+
+  setCategoryFilter(category) {
+    this.categoryFilter = category || 'all';
   }
 
   /**
    * Generates the next question.
-   * Prioritizes locked/undiscovered characters first, avoiding recently seen items.
+   * If specificTargetId is provided, forces that character as the target.
+   * Otherwise respects categoryFilter and prioritizes unvisited characters.
    */
-  nextQuestion() {
+  nextQuestion(specificTargetId = null) {
     this.roundCount++;
 
-    // Partition into candidate pools
-    const unlockedSet = this.state.unlockedCharacters;
-    const lockedChars = this.characters.filter(c => !unlockedSet.has(c.id) && !this.recentIds.includes(c.id));
-    const unvisitedAvailable = this.characters.filter(c => !this.recentIds.includes(c.id));
+    let target = null;
+    if (specificTargetId) {
+      target = this.characters.find(c => c.id === specificTargetId);
+    }
 
-    let pool = lockedChars.length > 0 ? lockedChars : (unvisitedAvailable.length > 0 ? unvisitedAvailable : this.characters);
+    if (!target) {
+      // Filter candidates by category if set
+      let candidates = this.characters;
+      if (this.categoryFilter && this.categoryFilter !== 'all') {
+        const filtered = this.characters.filter(c => c.category === this.categoryFilter);
+        if (filtered.length >= 4) {
+          candidates = filtered;
+        }
+      }
 
-    // Pick random character from target pool
-    const target = pool[Math.floor(Math.random() * pool.length)];
+      // Partition into candidate pools
+      const unlockedSet = this.state.unlockedCharacters;
+      const lockedChars = candidates.filter(c => !unlockedSet.has(c.id) && !this.recentIds.includes(c.id));
+      const unvisitedAvailable = candidates.filter(c => !this.recentIds.includes(c.id));
+
+      const pool = lockedChars.length > 0 ? lockedChars : (unvisitedAvailable.length > 0 ? unvisitedAvailable : candidates);
+      target = pool[Math.floor(Math.random() * pool.length)];
+    }
 
     // Track recently seen (keep last 5)
     this.recentIds.push(target.id);

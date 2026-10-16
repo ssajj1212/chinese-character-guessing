@@ -80,6 +80,17 @@
         <div id="category-tag" class="category-tag">Nature & Cosmos</div>
       </div>
 
+      <!-- Category Filter Pills in Game Arena -->
+      <div class="game-category-bar" role="tablist" aria-label="Question Category Filter">
+        <span class="category-filter-label">Category:</span>
+        <button class="game-cat-btn active" data-category="all" type="button">All (全部)</button>
+        <button class="game-cat-btn" data-category="nature" type="button">Nature (自然)</button>
+        <button class="game-cat-btn" data-category="animals" type="button">Animals (动物)</button>
+        <button class="game-cat-btn" data-category="human" type="button">Human (人体)</button>
+        <button class="game-cat-btn" data-category="plants" type="button">Plants (植物)</button>
+        <button class="game-cat-btn" data-category="tools" type="button">Tools (器物)</button>
+      </div>
+
       <!-- Bonus Countdown Timer -->
       <div class="timer-track" aria-label="Speed bonus timer">
         <div id="timer-fill" class="timer-fill"></div>
@@ -131,7 +142,7 @@
       <div class="codex-header-card">
         <div class="codex-intro">
           <h2>Oracle Bone Artifact Codex</h2>
-          <p>Identify ancient characters through play to permanently unlock them in the museum archive.</p>
+          <p>Identify ancient characters through play to permanently unlock them in the museum archive, or pick any character below to practice directly.</p>
         </div>
         <div class="codex-progress-badge">
           <span>Decoded:</span>
@@ -140,14 +151,17 @@
         </div>
       </div>
 
-      <!-- Category Filter Pills -->
-      <div class="codex-filters" role="tablist">
-        <button class="filter-chip active" data-category="all" type="button">All (全部)</button>
-        <button class="filter-chip" data-category="nature" type="button">Nature & Cosmos (自然)</button>
-        <button class="filter-chip" data-category="animals" type="button">Animals (飞禽走兽)</button>
-        <button class="filter-chip" data-category="human" type="button">Human & Life (人体)</button>
-        <button class="filter-chip" data-category="plants" type="button">Plants & Flora (植物)</button>
-        <button class="filter-chip" data-category="tools" type="button">Tools & Objects (器物)</button>
+      <!-- Category Filter Pills & Practice Action -->
+      <div class="codex-action-row">
+        <div class="codex-filters" role="tablist">
+          <button class="filter-chip active" data-category="all" type="button">All (全部)</button>
+          <button class="filter-chip" data-category="nature" type="button">Nature & Cosmos (自然)</button>
+          <button class="filter-chip" data-category="animals" type="button">Animals (飞禽走兽)</button>
+          <button class="filter-chip" data-category="human" type="button">Human & Life (人体)</button>
+          <button class="filter-chip" data-category="plants" type="button">Plants & Flora (植物)</button>
+          <button class="filter-chip" data-category="tools" type="button">Tools & Objects (器物)</button>
+        </div>
+        <button id="btn-practice-category" class="practice-category-btn" type="button">⚔️ Practice All Categories</button>
       </div>
 
       <!-- Character Tiles Grid -->
@@ -202,10 +216,15 @@
           <strong>Archaeological Notes (殷墟考据)：</strong><span id="fun-fact-text">在甲骨卜辞中，商王占卜是否出征、祭祀、或祈雨，日字皆作为核心天象字频繁出现。</span>
         </div>
 
-        <button id="btn-next" class="next-question-btn" type="button">
-          <span>Next Inscription (下一题)</span>
-          <span aria-hidden="true">➔</span>
-        </button>
+        <div class="modal-actions-row">
+          <button id="btn-challenge-this" class="challenge-this-btn" type="button" style="display: none;">
+            <span>⚔️ Challenge This Inscription</span>
+          </button>
+          <button id="btn-next" class="next-question-btn" type="button">
+            <span>Next Inscription (下一题)</span>
+            <span aria-hidden="true">➔</span>
+          </button>
+        </div>
       </div>
     </div>
 

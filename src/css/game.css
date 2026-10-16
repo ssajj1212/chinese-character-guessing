@@ -38,6 +38,55 @@
   font-family: var(--font-serif);
 }
 
+/* Category Filter Bar in Game Arena */
+.game-category-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scrollbar-width: none;
+}
+
+.game-category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-filter-label {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.game-cat-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.game-cat-btn:hover {
+  border-color: var(--imperial-gold);
+  color: var(--text-primary);
+}
+
+.game-cat-btn.active {
+  background: var(--imperial-gold);
+  color: var(--bg-dark);
+  border-color: var(--imperial-gold);
+  font-weight: 700;
+  box-shadow: 0 2px 8px var(--imperial-gold-glow);
+}
+
 .timer-track {
   width: 100%;
   height: 5px;

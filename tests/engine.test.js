@@ -120,4 +120,19 @@ describe('QuizEngine', () => {
       engine.submitAnswer(q.currentCharacter.id, 5);
     }
   });
+
+  it('filters questions by category when category filter is set', () => {
+    engine.setCategoryFilter('nature');
+    for (let i = 0; i < 5; i++) {
+      const q = engine.nextQuestion();
+      expect(q.currentCharacter.category).toBe('nature');
+    }
+  });
+
+  it('allows picking a specific character to answer directly', () => {
+    const q = engine.nextQuestion('char_niu');
+    expect(q.currentCharacter.id).toBe('char_niu');
+    expect(q.currentCharacter.modern).toBe('牛');
+    expect(q.options.some(o => o.id === 'char_niu' && o.isCorrect)).toBe(true);
+  });
 });

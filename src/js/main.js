@@ -23,8 +23,10 @@ class AppController {
     this._cacheDom();
     this._bindEvents();
 
-    this.codex = new CodexManager(characters, this.state, (char) => {
-      this.showCharacterInspection(char);
+    this.codex = new CodexManager(characters, this.state, {
+      onInspect: (char, isUnlocked) => this.showCharacterInspection(char, isUnlocked),
+      onChallenge: (char) => this.challengeCharacter(char.id),
+      onPracticeCategory: (cat) => this.practiceCategory(cat)
     });
 
     this.updateHeaderUI();
@@ -55,6 +57,7 @@ class AppController {
     // Game Arena
     this.roundCounter = document.getElementById('round-counter');
     this.categoryTag = document.getElementById('category-tag');
+    this.gameCatBtns = document.querySelectorAll('.game-cat-btn');
     this.timerFill = document.getElementById('timer-fill');
     this.oracleGlyphContainer = document.getElementById('oracle-glyph-container');
     this.modernCharBadge = document.getElementById('modern-char');
@@ -78,6 +81,7 @@ class AppController {
     this.evolutionStepper = document.getElementById('evolution-stepper');
     this.etymologyText = document.getElementById('etymology-text');
     this.funFactText = document.getElementById('fun-fact-text');
+    this.btnChallengeThis = document.getElementById('btn-challenge-this');
     this.btnNext = document.getElementById('btn-next');
 
     // Level Up Modal
@@ -109,6 +113,14 @@ class AppController {
         this.codex.render();
         this.loadNextQuestion();
       }
+    });
+
+    // Game Category selection buttons
+    this.gameCatBtns.forEach(btn => {
+      btn?.addEventListener('click', () => {
+        const cat = btn.dataset.category || 'all';
+        this.practiceCategory(cat);
+      });
     });
 
     // Choice selections
@@ -173,6 +185,25 @@ class AppController {
     }
   }
 
+  practiceCategory(category) {
+    this.engine.setCategoryFilter(category);
+    this.gameCatBtns.forEach(btn => {
+      if ((btn.dataset.category || 'all') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    this.switchView('play');
+    this.loadNextQuestion();
+  }
+
+  challengeCharacter(characterId) {
+    this.closeRevealModal();
+    this.switchView('play');
+    this.loadNextQuestion(characterId);
+  }
+
   updateHeaderUI() {
     const info = this.state.getLevelInfo();
 
@@ -203,9 +234,9 @@ class AppController {
     }
   }
 
-  loadNextQuestion() {
+  loadNextQuestion(targetCharId = null) {
     this.isAnsweringAllowed = true;
-    this.currentQuestionData = this.engine.nextQuestion();
+    this.currentQuestionData = this.engine.nextQuestion(targetCharId);
     const { roundNumber, currentCharacter, options } = this.currentQuestionData;
 
     // Reset button states (English only for guessing choices)
@@ -321,8 +352,13 @@ class AppController {
       });
     }
 
+    if (this.btnChallengeThis) this.btnChallengeThis.style.display = 'none';
     this.btnNext.textContent = 'Next Inscription (下一题) ➔';
     this.btnNext.style.display = 'flex';
+    this.btnNext.onclick = () => {
+      this.closeRevealModal();
+      this.loadNextQuestion();
+    };
     this.revealModal.classList.add('active');
   }
 
@@ -332,36 +368,89 @@ class AppController {
     }
   }
 
-  showCharacterInspection(char) {
+  showCharacterInspection(char, isUnlocked = true) {
     if (!this.revealModal) return;
 
-    this.verdictTitle.className = 'verdict-tag correct';
-    this.verdictIcon.textContent = '🏛️';
-    this.verdictText.textContent = 'Artifact Codex Inspection';
-    this.verdictScore.textContent = `${char.categoryName.en}`;
+    if (isUnlocked) {
+      this.verdictTitle.className = 'verdict-tag correct';
+      this.verdictIcon.textContent = '🏛️';
+      this.verdictText.textContent = 'Decoded Inscription';
+      this.verdictScore.textContent = `${char.categoryName.en} · ${char.categoryName.zh}`;
 
-    if (this.revealModernGlyph) this.revealModernGlyph.textContent = char.modern;
-    if (this.revealPinyin) this.revealPinyin.textContent = char.pinyin;
-    if (this.revealMeaning) this.revealMeaning.textContent = `${char.meaning.en} · ${char.meaning.zh}`;
-    if (this.etymologyText) this.etymologyText.textContent = char.description;
-    if (this.funFactText) this.funFactText.textContent = char.funFact;
+      if (this.revealModernGlyph) this.revealModernGlyph.textContent = char.modern;
+      if (this.revealPinyin) this.revealPinyin.textContent = char.pinyin;
+      if (this.revealMeaning) this.revealMeaning.textContent = `${char.meaning.en} · ${char.meaning.zh}`;
+      if (this.etymologyText) this.etymologyText.textContent = char.description;
+      if (this.funFactText) this.funFactText.textContent = char.funFact;
 
-    if (this.evolutionStepper) {
-      this.evolutionStepper.innerHTML = '';
-      char.evolution.forEach(stage => {
-        const card = document.createElement('div');
-        card.className = 'evolution-stage-card';
-        card.innerHTML = `
-          <span class="stage-era">${stage.era}</span>
-          <div class="stage-glyph-display">${stage.glyph}</div>
-          <span class="stage-name">${stage.stage}</span>
-        `;
-        this.evolutionStepper.appendChild(card);
-      });
+      if (this.evolutionStepper) {
+        this.evolutionStepper.innerHTML = '';
+        char.evolution.forEach(stage => {
+          const card = document.createElement('div');
+          card.className = 'evolution-stage-card';
+          card.innerHTML = `
+            <span class="stage-era">${stage.era}</span>
+            <div class="stage-glyph-display">${stage.glyph}</div>
+            <span class="stage-name">${stage.stage}</span>
+          `;
+          this.evolutionStepper.appendChild(card);
+        });
+      }
+
+      if (this.btnChallengeThis) {
+        this.btnChallengeThis.style.display = 'flex';
+        this.btnChallengeThis.innerHTML = `<span>⚔️ Practice "${char.modern}" (${char.meaning.en})</span>`;
+        this.btnChallengeThis.onclick = () => this.challengeCharacter(char.id);
+      }
+
+      this.btnNext.textContent = 'Close (关闭)';
+      this.btnNext.onclick = () => this.closeRevealModal();
+    } else {
+      this.verdictTitle.className = 'verdict-tag incorrect';
+      this.verdictIcon.textContent = '🔒';
+      this.verdictText.textContent = 'Undiscovered Inscription';
+      this.verdictScore.textContent = `Category: ${char.categoryName.en}`;
+
+      if (this.revealModernGlyph) this.revealModernGlyph.textContent = '？';
+      if (this.revealPinyin) this.revealPinyin.textContent = '???';
+      if (this.revealMeaning) this.revealMeaning.textContent = `Mystery ${char.categoryName.en} Character`;
+      if (this.etymologyText) {
+        this.etymologyText.textContent = `This 3,000-year-old pictograph belongs to the "${char.categoryName.en}" (${char.categoryName.zh}) category. Guess its meaning in a challenge to decipher its origin story, discover all 4 evolution stages, and unlock it in the Codex!`;
+      }
+      if (this.funFactText) {
+        this.funFactText.textContent = `Shang dynasty scribes carved thousands of divination characters. Can you decode this ${char.categoryName.en} inscription?`;
+      }
+
+      if (this.evolutionStepper) {
+        this.evolutionStepper.innerHTML = '';
+        const mysteryStages = [
+          { era: '商代 (~1200 BCE)', stage: '甲骨文', glyph: char.oracle_bone.svg },
+          { era: '西周 (~1000 BCE)', stage: '金文', glyph: '？' },
+          { era: '秦代 (~221 BCE)', stage: '小篆', glyph: '？' },
+          { era: '现代', stage: '楷书', glyph: '？' }
+        ];
+        mysteryStages.forEach(stage => {
+          const card = document.createElement('div');
+          card.className = 'evolution-stage-card';
+          card.innerHTML = `
+            <span class="stage-era">${stage.era}</span>
+            <div class="stage-glyph-display">${stage.glyph}</div>
+            <span class="stage-name">${stage.stage}</span>
+          `;
+          this.evolutionStepper.appendChild(card);
+        });
+      }
+
+      if (this.btnChallengeThis) {
+        this.btnChallengeThis.style.display = 'flex';
+        this.btnChallengeThis.innerHTML = '<span>⚔️ Challenge & Decode This Character</span>';
+        this.btnChallengeThis.onclick = () => this.challengeCharacter(char.id);
+      }
+
+      this.btnNext.textContent = 'Close (关闭)';
+      this.btnNext.onclick = () => this.closeRevealModal();
     }
 
-    this.btnNext.textContent = 'Close Inspection (关闭)';
-    this.btnNext.onclick = () => this.closeRevealModal();
     this.revealModal.classList.add('active');
   }
 

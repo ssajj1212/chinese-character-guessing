@@ -25,6 +25,27 @@ function createOracleSvg(paths, viewBox = "0 0 100 100") {
 </svg>`;
 }
 
+function createBronzeSvg(paths, viewBox = "0 0 100 100") {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="100%" height="100%" class="evolution-svg bronze-glyph-svg">
+  <g fill="none" stroke="#e0a944" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round">
+    ${paths}
+  </g>
+</svg>`;
+}
+
+function createSealSvg(paths, viewBox = "0 0 100 100") {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="100%" height="100%" class="evolution-svg seal-glyph-svg">
+  <g fill="none" stroke="#e27d44" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+    ${paths}
+  </g>
+</svg>`;
+}
+
+function extractInnerSvgPaths(svgString) {
+  const match = svgString.match(/<g[^>]*>([\s\S]*?)<\/g>/);
+  return match ? match[1].trim() : '<circle cx="50" cy="50" r="30" />';
+}
+
 // 50+ Curated Ancient Pictographic Characters based on Yinxu Oracle Bone discoveries & Wikimedia Commons
 const CHARACTER_COLLECTION = [
   // === NATURE & CELESTIAL ===
@@ -1060,18 +1081,170 @@ const CHARACTER_COLLECTION = [
   }
 ];
 
+const BRONZE_SEAL_PATHS = {
+  char_ri: {
+    bronze: '<circle cx="50" cy="50" r="30" stroke-width="6" /><line x1="28" y1="50" x2="72" y2="50" stroke-width="6" /><circle cx="50" cy="50" r="4" fill="#e0a944" />',
+    seal: '<rect x="30" y="16" width="40" height="68" rx="20" stroke-width="4.5" /><line x1="30" y1="50" x2="70" y2="50" stroke-width="4.5" />'
+  },
+  char_yue: {
+    bronze: '<path d="M 64 16 C 30 26, 26 74, 64 84 C 44 66, 44 34, 64 16 Z" stroke-width="6" /><line x1="38" y1="44" x2="52" y2="44" stroke-width="5" /><line x1="36" y1="58" x2="50" y2="58" stroke-width="5" />',
+    seal: '<path d="M 66 14 C 32 26, 32 74, 66 86" stroke-width="4.5" /><path d="M 46 26 C 26 44, 26 66, 46 86" stroke-width="4.5" /><line x1="36" y1="44" x2="56" y2="44" /><line x1="36" y1="58" x2="56" y2="58" />'
+  },
+  char_shui: {
+    bronze: '<path d="M 50 12 Q 38 35, 58 55 T 48 88" stroke-width="6" /><path d="M 28 32 Q 36 38, 28 46" stroke-width="5" /><path d="M 28 62 Q 36 68, 28 76" stroke-width="5" /><path d="M 72 32 Q 64 38, 72 46" stroke-width="5" /><path d="M 72 62 Q 64 68, 72 76" stroke-width="5" />',
+    seal: '<path d="M 50 15 Q 42 35, 54 52 T 48 85" stroke-width="4.5" /><path d="M 28 32 C 38 36, 38 46, 28 50" stroke-width="4" /><path d="M 28 62 C 38 66, 38 76, 28 80" stroke-width="4" /><path d="M 72 32 C 62 36, 62 46, 72 50" stroke-width="4" /><path d="M 72 62 C 62 66, 62 76, 72 80" stroke-width="4" />'
+  },
+  char_huo: {
+    bronze: '<path d="M 50 18 Q 42 45, 50 82 Q 58 45, 50 18" stroke-width="6" /><path d="M 30 38 Q 42 55, 30 78" stroke-width="5.5" /><path d="M 70 38 Q 58 55, 70 78" stroke-width="5.5" />',
+    seal: '<path d="M 50 16 L 50 84" stroke-width="4.5" /><path d="M 50 48 Q 28 58, 28 84" stroke-width="4.5" /><path d="M 50 48 Q 72 58, 72 84" stroke-width="4.5" /><path d="M 25 35 Q 38 48, 38 65" stroke-width="4" /><path d="M 75 35 Q 62 48, 62 65" stroke-width="4" />'
+  },
+  char_shan: {
+    bronze: '<path d="M 50 14 L 50 80" stroke-width="6.5" /><path d="M 22 40 L 22 80 L 78 80 L 78 40" stroke-width="6" />',
+    seal: '<path d="M 50 16 L 50 78" stroke-width="4.5" /><path d="M 22 40 C 22 78, 50 78, 50 78 C 50 78, 78 78, 78 40" stroke-width="4.5" />'
+  },
+  char_chuan: {
+    bronze: '<path d="M 28 14 Q 22 45, 30 86" stroke-width="6" /><path d="M 50 14 Q 45 50, 52 86" stroke-width="6" /><path d="M 72 14 Q 78 45, 70 86" stroke-width="6" />',
+    seal: '<path d="M 26 15 C 22 35, 22 65, 26 85" stroke-width="4.5" /><path d="M 50 15 L 50 85" stroke-width="4.5" /><path d="M 74 15 C 78 35, 78 65, 74 85" stroke-width="4.5" />'
+  },
+  char_yu: {
+    bronze: '<path d="M 20 25 Q 50 15, 80 25" stroke-width="6" /><line x1="50" y1="20" x2="50" y2="85" stroke-width="6" /><line x1="30" y1="42" x2="70" y2="42" stroke-width="5" /><circle cx="35" cy="55" r="4" fill="#e0a944" /><circle cx="35" cy="74" r="4" fill="#e0a944" /><circle cx="65" cy="55" r="4" fill="#e0a944" /><circle cx="65" cy="74" r="4" fill="#e0a944" />',
+    seal: '<path d="M 18 24 Q 50 16, 82 24 L 82 50 L 18 50 Z" stroke-width="4.5" /><line x1="50" y1="20" x2="50" y2="85" stroke-width="4.5" /><line x1="32" y1="65" x2="38" y2="78" stroke-width="4" /><line x1="68" y1="65" x2="62" y2="78" stroke-width="4" />'
+  },
+  char_shi: {
+    bronze: '<path d="M 22 22 L 78 22 L 32 64" stroke-width="6" /><rect x="40" y="44" width="30" height="30" rx="4" stroke-width="5.5" />',
+    seal: '<path d="M 20 22 L 78 22 C 45 45, 32 60, 32 82" stroke-width="4.5" /><rect x="38" y="46" width="34" height="36" rx="6" stroke-width="4.5" />'
+  },
+  char_tu: {
+    bronze: '<line x1="18" y1="84" x2="82" y2="84" stroke-width="6" /><line x1="50" y1="18" x2="50" y2="84" stroke-width="6" /><ellipse cx="50" cy="40" rx="16" ry="18" stroke-width="5" />',
+    seal: '<line x1="18" y1="84" x2="82" y2="84" stroke-width="4.5" /><line x1="50" y1="18" x2="50" y2="84" stroke-width="4.5" /><line x1="30" y1="52" x2="70" y2="52" stroke-width="4.5" />'
+  },
+  char_niu: {
+    bronze: '<path d="M 20 26 Q 30 52, 50 52 Q 70 52, 80 26" stroke-width="6" /><line x1="50" y1="18" x2="50" y2="85" stroke-width="6" /><line x1="30" y1="60" x2="70" y2="60" stroke-width="5.5" />',
+    seal: '<path d="M 22 30 C 32 54, 50 54, 50 54 C 50 54, 68 54, 78 30" stroke-width="4.5" /><line x1="50" y1="18" x2="50" y2="85" stroke-width="4.5" /><line x1="28" y1="60" x2="72" y2="60" stroke-width="4" />'
+  },
+  char_yang: {
+    bronze: '<path d="M 24 36 Q 35 16, 50 36 Q 65 16, 76 36" stroke-width="6" /><line x1="50" y1="20" x2="50" y2="85" stroke-width="6" /><line x1="28" y1="50" x2="72" y2="50" stroke-width="5.5" /><line x1="32" y1="68" x2="68" y2="68" stroke-width="5.5" />',
+    seal: '<path d="M 24 38 C 34 18, 50 36, 50 36 C 50 36, 66 18, 76 38" stroke-width="4.5" /><line x1="50" y1="20" x2="50" y2="85" stroke-width="4.5" /><line x1="26" y1="50" x2="74" y2="50" stroke-width="4" /><line x1="30" y1="66" x2="70" y2="66" stroke-width="4" />'
+  },
+  char_ma: {
+    bronze: '<circle cx="62" cy="24" r="8" stroke-width="5.5" /><path d="M 58 18 Q 44 26, 44 52" stroke-width="5.5" /><line x1="50" y1="24" x2="40" y2="30" /><line x1="48" y1="34" x2="38" y2="40" /><path d="M 44 52 L 72 52 L 72 85" stroke-width="5.5" /><line x1="50" y1="52" x2="48" y2="85" /><line x1="62" y1="52" x2="60" y2="85" /><path d="M 72 55 Q 84 70, 80 85" stroke-width="5" />',
+    seal: '<rect x="35" y="16" width="30" height="34" rx="8" stroke-width="4.5" /><line x1="35" y1="32" x2="65" y2="32" /><line x1="50" y1="50" x2="50" y2="84" /><path d="M 30 65 L 70 65" /><line x1="35" y1="84" x2="65" y2="84" /><path d="M 65 32 Q 78 50, 75 75" />'
+  },
+  char_yu_fish: {
+    bronze: '<path d="M 50 14 L 64 30 L 36 30 Z" stroke-width="5.5" /><rect x="36" y="30" width="28" height="36" stroke-width="5.5" /><line x1="36" y1="48" x2="64" y2="48" /><line x1="50" y1="30" x2="50" y2="66" /><path d="M 50 66 L 34 85 M 50 66 L 66 85" stroke-width="5.5" />',
+    seal: '<path d="M 50 14 C 40 22, 40 30, 50 34 C 60 30, 60 22, 50 14 Z" stroke-width="4.5" /><rect x="34" y="34" width="32" height="32" rx="4" stroke-width="4.5" /><line x1="34" y1="50" x2="66" y2="50" /><line x1="50" y1="34" x2="50" y2="66" /><path d="M 34 66 C 34 78, 50 82, 50 85 C 50 82, 66 78, 66 66" stroke-width="4.5" />'
+  },
+  char_niao: {
+    bronze: '<circle cx="48" cy="24" r="8" stroke-width="5.5" /><path d="M 40 24 L 28 24" stroke-width="5" /><path d="M 52 30 Q 64 45, 52 66 Q 38 72, 34 60 Q 36 42, 50 32" stroke-width="5.5" /><path d="M 52 66 L 68 86 M 46 66 L 54 88" stroke-width="5" /><path d="M 52 46 Q 76 56, 78 76" stroke-width="5" />',
+    seal: '<circle cx="50" cy="22" r="7" stroke-width="4.5" /><path d="M 43 22 L 32 22" stroke-width="4" /><path d="M 50 29 C 62 42, 62 60, 50 68 C 38 60, 38 42, 50 29 Z" stroke-width="4.5" /><line x1="38" y1="48" x2="62" y2="48" /><path d="M 42 68 L 36 86 M 58 68 L 64 86 M 50 68 L 50 86" stroke-width="4" />'
+  },
+  char_hu: {
+    bronze: '<path d="M 28 32 C 28 18, 52 18, 52 32 C 45 42, 28 42, 28 32" stroke-width="5.5" /><path d="M 52 30 L 74 38 L 70 82" stroke-width="5.5" /><line x1="58" y1="42" x2="52" y2="82" stroke-width="5" /><line x1="70" y1="42" x2="78" y2="82" stroke-width="5" /><path d="M 72 45 Q 86 45, 86 65" stroke-width="5.5" />',
+    seal: '<path d="M 30 25 C 30 15, 60 15, 60 25 C 50 35, 30 35, 30 25" stroke-width="4.5" /><line x1="45" y1="32" x2="45" y2="84" stroke-width="4.5" /><path d="M 45 45 C 30 55, 30 75, 45 84" stroke-width="4" /><path d="M 45 48 C 65 55, 65 75, 50 84" stroke-width="4" />'
+  },
+  char_ren: {
+    bronze: '<path d="M 40 18 Q 50 32, 50 50 L 36 85" stroke-width="6" /><path d="M 50 42 L 70 56" stroke-width="6" />',
+    seal: '<path d="M 50 18 C 50 45, 30 60, 28 85" stroke-width="4.5" /><path d="M 48 42 C 60 55, 68 70, 72 85" stroke-width="4.5" />'
+  },
+  char_mu: {
+    bronze: '<path d="M 16 50 Q 50 18, 84 50 Q 50 82, 16 50 Z" stroke-width="6" /><circle cx="50" cy="50" r="10" stroke-width="6" />',
+    seal: '<rect x="32" y="16" width="36" height="68" rx="16" stroke-width="4.5" /><line x1="32" y1="38" x2="68" y2="38" /><line x1="32" y1="62" x2="68" y2="62" /><circle cx="50" cy="50" r="4" fill="#e27d44" />'
+  },
+  char_kou: {
+    bronze: '<path d="M 26 32 C 26 32, 50 20, 74 32 C 74 60, 62 76, 50 80 C 38 76, 26 60, 26 32 Z" stroke-width="6" />',
+    seal: '<rect x="28" y="24" width="44" height="52" rx="12" stroke-width="4.5" />'
+  },
+  char_er: {
+    bronze: '<path d="M 36 18 C 66 14, 76 40, 60 60 C 50 72, 36 85, 36 85" stroke-width="6" /><line x1="36" y1="18" x2="36" y2="85" stroke-width="6" />',
+    seal: '<path d="M 34 20 C 68 18, 68 45, 52 55 C 45 62, 34 85, 34 85" stroke-width="4.5" /><line x1="34" y1="20" x2="34" y2="85" stroke-width="4.5" /><line x1="34" y1="38" x2="58" y2="38" stroke-width="4" />'
+  },
+  char_shou: {
+    bronze: '<line x1="50" y1="52" x2="50" y2="85" stroke-width="6" /><path d="M 50 52 L 24 32 M 50 52 L 34 18 M 50 52 L 50 14 M 50 52 L 66 18 M 50 52 L 76 32" stroke-width="5.5" />',
+    seal: '<line x1="50" y1="18" x2="50" y2="85" stroke-width="4.5" /><path d="M 24 38 Q 50 48, 76 38" stroke-width="4.5" /><path d="M 26 56 Q 50 64, 74 56" stroke-width="4.5" />'
+  },
+  char_zi: {
+    bronze: '<circle cx="50" cy="28" r="14" stroke-width="5.5" /><line x1="20" y1="46" x2="80" y2="46" stroke-width="6" /><path d="M 50 44 L 50 75 Q 50 85, 38 85" stroke-width="6" />',
+    seal: '<circle cx="50" cy="28" r="14" stroke-width="4.5" /><line x1="20" y1="46" x2="80" y2="46" stroke-width="4.5" /><path d="M 50 42 C 50 70, 36 85, 36 85" stroke-width="4.5" />'
+  },
+  char_nv: {
+    bronze: '<path d="M 36 22 C 36 46, 64 46, 64 75 L 34 75" stroke-width="6" /><line x1="28" y1="45" x2="74" y2="45" stroke-width="6" /><circle cx="36" cy="22" r="5" fill="#e0a944" />',
+    seal: '<path d="M 34 22 C 34 50, 66 50, 66 78 L 32 78" stroke-width="4.5" /><line x1="25" y1="48" x2="75" y2="48" stroke-width="4.5" />'
+  },
+  char_xin: {
+    bronze: '<path d="M 26 35 C 20 56, 34 76, 50 78 C 66 76, 80 56, 74 35" stroke-width="6" /><line x1="50" y1="30" x2="50" y2="50" stroke-width="5" />',
+    seal: '<path d="M 28 35 C 22 58, 35 78, 50 80 C 65 78, 78 58, 72 35" stroke-width="4.5" /><path d="M 40 40 L 40 58 M 60 40 L 60 58" stroke-width="4" />'
+  },
+  char_mu_wood: {
+    bronze: '<line x1="50" y1="16" x2="50" y2="85" stroke-width="6" /><path d="M 22 36 Q 38 44, 50 44 Q 62 44, 78 36" stroke-width="5.5" /><path d="M 22 72 Q 38 62, 50 62 Q 62 62, 78 72" stroke-width="5.5" />',
+    seal: '<line x1="50" y1="15" x2="50" y2="85" stroke-width="4.5" /><path d="M 24 38 C 38 48, 50 48, 50 48 C 50 48, 62 48, 76 38" stroke-width="4.5" /><path d="M 24 82 C 38 65, 50 65, 50 65 C 50 65, 62 65, 76 82" stroke-width="4.5" />'
+  },
+  char_tian: {
+    bronze: '<rect x="20" y="20" width="60" height="60" stroke-width="6" rx="3" /><line x1="50" y1="20" x2="50" y2="80" stroke-width="5.5" /><line x1="20" y1="50" x2="80" y2="50" stroke-width="5.5" />',
+    seal: '<rect x="24" y="18" width="52" height="64" rx="8" stroke-width="4.5" /><line x1="50" y1="18" x2="50" y2="82" stroke-width="4" /><line x1="24" y1="50" x2="76" y2="50" stroke-width="4" />'
+  },
+  char_men: {
+    bronze: '<line x1="24" y1="16" x2="76" y2="16" stroke-width="6" /><line x1="24" y1="16" x2="24" y2="85" stroke-width="6" /><line x1="76" y1="16" x2="76" y2="85" stroke-width="6" /><line x1="24" y1="46" x2="48" y2="46" stroke-width="5" /><line x1="52" y1="46" x2="76" y2="46" stroke-width="5" />',
+    seal: '<path d="M 24 18 L 76 18 M 24 18 L 24 84 M 76 18 L 76 84" stroke-width="4.5" /><path d="M 24 45 C 36 45, 48 45, 48 55 M 76 45 C 64 45, 52 45, 52 55" stroke-width="4" />'
+  },
+  char_che: {
+    bronze: '<circle cx="50" cy="22" r="14" stroke-width="5" /><circle cx="50" cy="78" r="14" stroke-width="5" /><line x1="50" y1="36" x2="50" y2="64" stroke-width="6" /><rect x="36" y="40" width="28" height="20" stroke-width="5" />',
+    seal: '<line x1="50" y1="14" x2="50" y2="86" stroke-width="4.5" /><circle cx="50" cy="30" r="12" stroke-width="4" /><circle cx="50" cy="70" r="12" stroke-width="4" /><rect x="34" y="44" width="32" height="12" rx="3" stroke-width="4" />'
+  },
+  char_dao: {
+    bronze: '<path d="M 46 14 L 46 45 C 46 66, 28 82, 28 82 L 52 82 C 66 70, 66 45, 66 14 Z" stroke-width="6" />',
+    seal: '<path d="M 44 16 L 44 48 C 44 70, 28 84, 28 84" stroke-width="4.5" /><path d="M 44 16 C 68 30, 68 60, 44 84" stroke-width="4.5" />'
+  },
+  char_ding: {
+    bronze: '<rect x="24" y="26" width="52" height="36" rx="4" stroke-width="6" /><line x1="32" y1="26" x2="32" y2="14" stroke-width="6" /><line x1="68" y1="26" x2="68" y2="14" stroke-width="6" /><line x1="32" y1="62" x2="28" y2="86" stroke-width="6" /><line x1="50" y1="62" x2="50" y2="86" stroke-width="6" /><line x1="68" y1="62" x2="72" y2="86" stroke-width="6" />',
+    seal: '<rect x="26" y="28" width="48" height="34" rx="6" stroke-width="4.5" /><path d="M 32 28 L 32 15 M 68 28 L 68 15" stroke-width="4.5" /><path d="M 30 62 L 26 85 M 70 62 L 74 85 M 50 62 L 50 85" stroke-width="4.5" />'
+  }
+};
+
 export async function buildDataset() {
   const targetDir = path.resolve(__dirname, '../data');
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  const targetFile = path.join(targetDir, 'characters.json');
-  fs.writeFileSync(targetFile, JSON.stringify(CHARACTER_COLLECTION, null, 2), 'utf-8');
+  const compiled = CHARACTER_COLLECTION.map(char => {
+    const custom = BRONZE_SEAL_PATHS[char.id] || {};
+    const inner = extractInnerSvgPaths(char.oracle_bone.svg);
+    const bronzePaths = custom.bronze || inner;
+    const sealPaths = custom.seal || inner;
 
-  console.log(`[Scraper Engine] Successfully compiled ${CHARACTER_COLLECTION.length} curated Oracle Bone pictographs.`);
+    return {
+      ...char,
+      evolution: [
+        {
+          era: "商代 (~1200 BCE)",
+          stage: "甲骨文 (Oracle Bone)",
+          glyph: char.oracle_bone.svg
+        },
+        {
+          era: "周代 (~1000 BCE)",
+          stage: "金文 (Bronze Script)",
+          glyph: createBronzeSvg(bronzePaths)
+        },
+        {
+          era: "秦代 (~220 BCE)",
+          stage: "小篆 (Seal Script)",
+          glyph: createSealSvg(sealPaths)
+        },
+        {
+          era: "汉代至今",
+          stage: "楷书 (Modern)",
+          glyph: char.modern
+        }
+      ]
+    };
+  });
+
+  const targetFile = path.join(targetDir, 'characters.json');
+  fs.writeFileSync(targetFile, JSON.stringify(compiled, null, 2), 'utf-8');
+
+  console.log(`[Scraper Engine] Successfully compiled ${compiled.length} curated Oracle Bone pictographs with vector evolution SVGs.`);
   console.log(`[Scraper Engine] Bundled output written to: ${targetFile}`);
-  return CHARACTER_COLLECTION;
+  return compiled;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
