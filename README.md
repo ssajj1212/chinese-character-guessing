@@ -9,8 +9,6 @@
 > **Travel 3,200 years back to the Shang Dynasty (商代, c. 1200 BCE).**  
 > Test your archaeological intuition by deciphering the earliest known Chinese writing carved on ox scapulae and turtle plastrons (甲骨文).
 
-🎮 **[Play Live on GitHub Pages](https://ssajj1212.github.io/chinese-character-guessing/)** *(Works directly on mobile & desktop browsers)*
-
 ---
 
 ## 📸 Interface Preview
@@ -103,24 +101,6 @@ npm run preview
 
 ---
 
-## 🌐 Deploying to GitHub Pages
-
-This project is configured with an automated CI/CD pipeline (`.github/workflows/deploy.yml`).
-
-To publish your own fork or branch to GitHub Pages:
-
-1. Push your changes to GitHub:
-   ```bash
-   git push origin <your-branch>
-   ```
-2. In your GitHub repository, navigate to **Settings** ➔ **Pages**.
-3. Under **Build and deployment** ➔ **Source**, select **GitHub Actions**.
-4. The deployment workflow will automatically run, test, build, and publish the site to:
-   ```
-   https://<your-username>.github.io/chinese-character-guessing/
-   ```
-
----
 
 ## 📁 Project Architecture
 
