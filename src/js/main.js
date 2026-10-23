@@ -1,0 +1,529 @@
+/**
+ * Application Entrypoint & Main Coordinator
+ * Oracle Bone Script Guessing Game (甲骨探幽)
+ */
+
+import characters from '../../data/characters.json';
+import { GameState } from './state.js';
+import { QuizEngine } from './engine.js';
+import { SoundEngine } from './audio.js';
+import { CodexManager } from './codex.js';
+
+class AppController {
+  constructor() {
+    this.state = new GameState();
+    this.sound = new SoundEngine();
+    this.engine = new QuizEngine(characters, this.state);
+
+    this.timerInterval = null;
+    this.remainingTime = 15;
+    this.isAnsweringAllowed = true;
+    this.currentQuestionData = null;
+
+    this._cacheDom();
+    this._bindEvents();
+
+    this.codex = new CodexManager(characters, this.state, {
+      onInspect: (char, isUnlocked) => this.showCharacterInspection(char, isUnlocked),
+      onChallenge: (char) => this.challengeCharacter(char.id),
+      onPracticeCategory: (cat) => this.practiceCategory(cat)
+    });
+
+    this.updateHeaderUI();
+    this.loadNextQuestion();
+  }
+
+  _cacheDom() {
+    // Navigation & Tabs
+    this.tabPlay = document.getElementById('tab-play');
+    this.tabCodex = document.getElementById('tab-codex');
+    this.gameView = document.getElementById('game-view');
+    this.codexView = document.getElementById('codex-view');
+
+    // Controls
+    this.btnSound = document.getElementById('btn-sound');
+    this.btnReset = document.getElementById('btn-reset');
+
+    // Scholar Status
+    this.scholarBadge = document.getElementById('scholar-badge');
+    this.scholarTitleZh = document.getElementById('scholar-title-zh');
+    this.scholarTitleEn = document.getElementById('scholar-title-en');
+    this.xpText = document.getElementById('xp-text');
+    this.xpFill = document.getElementById('xp-fill');
+    this.scoreDisplay = document.getElementById('score-display');
+    this.streakIndicator = document.getElementById('streak-indicator');
+    this.streakCount = document.getElementById('streak-count');
+
+    // Game Arena
+    this.roundCounter = document.getElementById('round-counter');
+    this.categoryTag = document.getElementById('category-tag');
+    this.difficultyTag = document.getElementById('difficulty-tag');
+    this.gameCatBtns = document.querySelectorAll('.game-cat-btn');
+    this.gameDiffBtns = document.querySelectorAll('.game-diff-btn');
+    this.timerFill = document.getElementById('timer-fill');
+    this.oracleGlyphContainer = document.getElementById('oracle-glyph-container');
+    this.modernCharBadge = document.getElementById('modern-char');
+    this.choiceBtns = [
+      document.getElementById('choice-0'),
+      document.getElementById('choice-1'),
+      document.getElementById('choice-2'),
+      document.getElementById('choice-3')
+    ];
+
+    // Reveal Modal
+    this.revealModal = document.getElementById('reveal-modal');
+    this.verdictTitle = document.getElementById('verdict-title');
+    this.verdictIcon = document.getElementById('verdict-icon');
+    this.verdictText = document.getElementById('verdict-text');
+    this.verdictScore = document.getElementById('verdict-score');
+    this.revealModernGlyph = document.getElementById('reveal-modern-glyph');
+    this.revealPinyin = document.getElementById('reveal-pinyin');
+    this.revealDifficultyTag = document.getElementById('reveal-difficulty-tag');
+    this.revealMeaning = document.getElementById('reveal-meaning');
+    this.btnPronounce = document.getElementById('btn-pronounce');
+    this.evolutionStepper = document.getElementById('evolution-stepper');
+    this.etymologyText = document.getElementById('etymology-text');
+    this.funFactText = document.getElementById('fun-fact-text');
+    this.btnChallengeThis = document.getElementById('btn-challenge-this');
+    this.btnNext = document.getElementById('btn-next');
+
+    // Level Up Modal
+    this.levelUpModal = document.getElementById('level-up-modal');
+    this.promotedBadge = document.getElementById('promoted-badge');
+    this.promotedTitle = document.getElementById('promoted-title');
+    this.promotedDesc = document.getElementById('promoted-desc');
+    this.btnLevelDismiss = document.getElementById('btn-level-dismiss');
+  }
+
+  _bindEvents() {
+    // Tab switching
+    this.tabPlay?.addEventListener('click', () => this.switchView('play'));
+    this.tabCodex?.addEventListener('click', () => this.switchView('codex'));
+
+    // Sound toggle
+    this.btnSound?.addEventListener('click', () => {
+      const isMuted = this.sound.toggleMute();
+      this.btnSound.textContent = isMuted ? '🔕' : '🔔';
+      this.btnSound.title = isMuted ? 'Muted (click to unmute)' : 'Sound On (click to mute)';
+    });
+
+    // Reset progress
+    this.btnReset?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset your scholar level and unlocked artifact codex?')) {
+        this.state.resetAll();
+        this.updateHeaderUI();
+        this.codex.updateStats();
+        this.codex.render();
+        this.loadNextQuestion();
+      }
+    });
+
+    // Game Category selection buttons
+    this.gameCatBtns.forEach(btn => {
+      btn?.addEventListener('click', () => {
+        const cat = btn.dataset.category || 'all';
+        this.practiceCategory(cat);
+      });
+    });
+
+    // Game Difficulty selection buttons
+    this.gameDiffBtns.forEach(btn => {
+      btn?.addEventListener('click', () => {
+        this.gameDiffBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const diff = btn.dataset.difficulty || 'all';
+        this.engine.setDifficultyFilter(diff);
+        this.loadNextQuestion();
+      });
+    });
+
+    // Choice selections
+    this.choiceBtns.forEach((btn, idx) => {
+      btn?.addEventListener('click', () => this.handleAnswer(idx));
+    });
+
+    // Next question from reveal modal
+    this.btnNext?.addEventListener('click', () => {
+      this.closeRevealModal();
+      this.loadNextQuestion();
+    });
+
+    // Audio Pronunciation using Web Speech API
+    this.btnPronounce?.addEventListener('click', () => {
+      this.speakChineseCharacter();
+    });
+
+    // Level-up dismiss
+    this.btnLevelDismiss?.addEventListener('click', () => {
+      this.levelUpModal.classList.remove('active');
+    });
+
+    // State events
+    this.state.on('scoreChange', () => this.updateHeaderUI());
+    this.state.on('xpChange', () => this.updateHeaderUI());
+    this.state.on('streakChange', () => this.updateHeaderUI());
+    this.state.on('levelUp', () => this.handleLevelUp());
+
+    // Keyboard controls (1-4 for options, Enter for next)
+    window.addEventListener('keydown', (e) => {
+      if (this.revealModal?.classList.contains('active')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.closeRevealModal();
+          this.loadNextQuestion();
+        }
+        return;
+      }
+
+      if (!this.isAnsweringAllowed || this.gameView.style.display === 'none') return;
+
+      if (['1', '2', '3', '4'].includes(e.key)) {
+        const idx = parseInt(e.key, 10) - 1;
+        this.handleAnswer(idx);
+      }
+    });
+  }
+
+  switchView(viewName) {
+    if (viewName === 'play') {
+      this.tabPlay.classList.add('active');
+      this.tabCodex.classList.remove('active');
+      this.gameView.style.display = 'flex';
+      this.codexView.style.display = 'none';
+    } else {
+      this.tabPlay.classList.remove('active');
+      this.tabCodex.classList.add('active');
+      this.gameView.style.display = 'none';
+      this.codexView.style.display = 'flex';
+      this.codex.render();
+    }
+  }
+
+  practiceCategory(category) {
+    this.engine.setCategoryFilter(category);
+    this.gameCatBtns.forEach(btn => {
+      if ((btn.dataset.category || 'all') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    this.switchView('play');
+    this.loadNextQuestion();
+  }
+
+  challengeCharacter(characterId) {
+    this.closeRevealModal();
+    this.switchView('play');
+    this.loadNextQuestion(characterId);
+  }
+
+  updateHeaderUI() {
+    const info = this.state.getLevelInfo();
+
+    if (this.scholarBadge) this.scholarBadge.textContent = info.badge;
+    if (this.scholarTitleEn) this.scholarTitleEn.textContent = `${info.titleEn}`;
+    if (this.scholarTitleZh) this.scholarTitleZh.textContent = `${info.titleZh} · Lv.${info.level}`;
+
+    if (this.xpText) {
+      this.xpText.textContent = info.isMaxLevel ? `${this.state.xp} XP (Grand Master)` : `${this.state.xp} / ${info.nextXp} XP`;
+    }
+    if (this.xpFill) {
+      this.xpFill.style.width = `${info.progressPercent}%`;
+    }
+    if (this.scoreDisplay) {
+      this.scoreDisplay.textContent = this.state.score.toLocaleString();
+    }
+
+    if (this.streakCount) {
+      const mult = this.state.getMultiplier();
+      this.streakCount.textContent = mult > 1 ? `${this.state.streak} Streak (${mult}x)` : `${this.state.streak} Streak`;
+    }
+    if (this.streakIndicator) {
+      if (this.state.streak >= 3) {
+        this.streakIndicator.classList.add('streak-fire');
+      } else {
+        this.streakIndicator.classList.remove('streak-fire');
+      }
+    }
+  }
+
+  loadNextQuestion(targetCharId = null) {
+    this.isAnsweringAllowed = true;
+    this.currentQuestionData = this.engine.nextQuestion(targetCharId);
+    const { roundNumber, currentCharacter, options } = this.currentQuestionData;
+
+    // Reset button states (English only for guessing choices)
+    this.choiceBtns.forEach((btn, idx) => {
+      btn.disabled = false;
+      btn.className = 'choice-btn';
+      const opt = options[idx];
+      const enEl = btn.querySelector('.choice-meaning-en');
+      if (enEl) enEl.textContent = opt.meaningEn;
+    });
+
+    // Set round, category, and difficulty metadata
+    if (this.roundCounter) this.roundCounter.textContent = `Question ${roundNumber}`;
+    if (this.categoryTag) this.categoryTag.textContent = `${currentCharacter.categoryName.en}`;
+    
+    const diff = currentCharacter.difficulty || 'easy';
+    const diffLabels = {
+      easy: '🟢 Easy (入门)',
+      medium: '🟡 Medium (进阶)',
+      hard: '🔴 Master (宗师)'
+    };
+    if (this.difficultyTag) {
+      this.difficultyTag.className = `difficulty-tag ${diff}`;
+      this.difficultyTag.textContent = diffLabels[diff] || diff;
+    }
+
+    // Inject Oracle Bone SVG and modern character
+    if (this.oracleGlyphContainer) {
+      this.oracleGlyphContainer.innerHTML = currentCharacter.oracle_bone.svg;
+    }
+    if (this.modernCharBadge) {
+      this.modernCharBadge.textContent = currentCharacter.modern;
+    }
+
+    // Reset and start countdown timer (15 seconds)
+    this.startTimer();
+  }
+
+  startTimer() {
+    clearInterval(this.timerInterval);
+    this.remainingTime = 15;
+    if (this.timerFill) {
+      this.timerFill.style.transition = 'none';
+      this.timerFill.style.width = '100%';
+      // Force repaint
+      void this.timerFill.offsetWidth;
+      this.timerFill.style.transition = 'width 15s linear';
+      this.timerFill.style.width = '0%';
+    }
+
+    this.timerInterval = setInterval(() => {
+      this.remainingTime -= 1;
+      if (this.remainingTime <= 0) {
+        clearInterval(this.timerInterval);
+      }
+    }, 1000);
+  }
+
+  handleAnswer(choiceIndex) {
+    if (!this.isAnsweringAllowed || !this.currentQuestionData) return;
+    this.isAnsweringAllowed = false;
+    clearInterval(this.timerInterval);
+
+    const selectedOption = this.currentQuestionData.options[choiceIndex];
+    const result = this.engine.submitAnswer(selectedOption.id, this.remainingTime);
+
+    // Apply button highlight styles
+    this.choiceBtns.forEach((btn, idx) => {
+      btn.disabled = true;
+      const opt = this.currentQuestionData.options[idx];
+      if (opt.isCorrect) {
+        btn.classList.add('correct');
+      } else if (idx === choiceIndex && !result.correct) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    // Sound feedback
+    if (result.correct) {
+      this.sound.playCorrect();
+    } else {
+      this.sound.playWrong();
+    }
+
+    // Open reveal modal after brief suspense delay
+    setTimeout(() => {
+      this.openRevealModal(result);
+    }, 450);
+  }
+
+  openRevealModal(result) {
+    if (!this.revealModal) return;
+
+    if (result.correct) {
+      this.verdictTitle.className = 'verdict-tag correct';
+      this.verdictIcon.textContent = '✨';
+      this.verdictText.textContent = 'Correct!';
+      this.verdictScore.textContent = `+${result.scoreEarned} XP (${result.multiplier}x Multiplier)`;
+    } else {
+      this.verdictTitle.className = 'verdict-tag incorrect';
+      this.verdictIcon.textContent = '📜';
+      this.verdictText.textContent = `Answer: ${result.correctOption.meaningEn}`;
+      this.verdictScore.textContent = '+0 XP (Streak Reset)';
+    }
+
+    if (this.revealModernGlyph) this.revealModernGlyph.textContent = result.modern;
+    if (this.revealPinyin) this.revealPinyin.textContent = result.pinyin;
+    if (this.revealMeaning) this.revealMeaning.textContent = `${result.meaning.en} · ${result.meaning.zh}`;
+    
+    const diff = result.difficulty || 'easy';
+    const basePts = { easy: 100, medium: 150, hard: 200 };
+    if (this.revealDifficultyTag) {
+      this.revealDifficultyTag.className = `difficulty-tag ${diff}`;
+      this.revealDifficultyTag.textContent = `${diff.toUpperCase()} · ${basePts[diff]} Base XP`;
+    }
+
+    if (this.etymologyText) this.etymologyText.textContent = result.description;
+    if (this.funFactText) this.funFactText.textContent = result.funFact;
+
+    // Render evolution stepper
+    if (this.evolutionStepper) {
+      this.evolutionStepper.innerHTML = '';
+      result.evolution.forEach(stage => {
+        const card = document.createElement('div');
+        card.className = 'evolution-stage-card';
+        card.innerHTML = `
+          <span class="stage-era">${stage.era}</span>
+          <div class="stage-glyph-display">${stage.glyph}</div>
+          <span class="stage-name">${stage.stage}</span>
+        `;
+        this.evolutionStepper.appendChild(card);
+      });
+    }
+
+    if (this.btnChallengeThis) this.btnChallengeThis.style.display = 'none';
+    this.btnNext.textContent = 'Next Inscription (下一题) ➔';
+    this.btnNext.style.display = 'flex';
+    this.btnNext.onclick = () => {
+      this.closeRevealModal();
+      this.loadNextQuestion();
+    };
+    this.revealModal.classList.add('active');
+  }
+
+  closeRevealModal() {
+    if (this.revealModal) {
+      this.revealModal.classList.remove('active');
+    }
+  }
+
+  showCharacterInspection(char, isUnlocked = true) {
+    if (!this.revealModal) return;
+
+    if (isUnlocked) {
+      this.verdictTitle.className = 'verdict-tag correct';
+      this.verdictIcon.textContent = '🏛️';
+      this.verdictText.textContent = 'Decoded Inscription';
+      this.verdictScore.textContent = `${char.categoryName.en} · ${char.categoryName.zh}`;
+
+      if (this.revealModernGlyph) this.revealModernGlyph.textContent = char.modern;
+      if (this.revealPinyin) this.revealPinyin.textContent = char.pinyin;
+      if (this.revealMeaning) this.revealMeaning.textContent = `${char.meaning.en} · ${char.meaning.zh}`;
+      
+      const diff = char.difficulty || 'easy';
+      if (this.revealDifficultyTag) {
+        this.revealDifficultyTag.className = `difficulty-tag ${diff}`;
+        this.revealDifficultyTag.textContent = `${diff.toUpperCase()}`;
+      }
+
+      if (this.etymologyText) this.etymologyText.textContent = char.description;
+      if (this.funFactText) this.funFactText.textContent = char.funFact;
+
+      if (this.evolutionStepper) {
+        this.evolutionStepper.innerHTML = '';
+        char.evolution.forEach(stage => {
+          const card = document.createElement('div');
+          card.className = 'evolution-stage-card';
+          card.innerHTML = `
+            <span class="stage-era">${stage.era}</span>
+            <div class="stage-glyph-display">${stage.glyph}</div>
+            <span class="stage-name">${stage.stage}</span>
+          `;
+          this.evolutionStepper.appendChild(card);
+        });
+      }
+
+      if (this.btnChallengeThis) {
+        this.btnChallengeThis.style.display = 'flex';
+        this.btnChallengeThis.innerHTML = `<span>⚔️ Practice "${char.modern}" (${char.meaning.en})</span>`;
+        this.btnChallengeThis.onclick = () => this.challengeCharacter(char.id);
+      }
+
+      this.btnNext.textContent = 'Close (关闭)';
+      this.btnNext.onclick = () => this.closeRevealModal();
+    } else {
+      this.verdictTitle.className = 'verdict-tag incorrect';
+      this.verdictIcon.textContent = '🔒';
+      this.verdictText.textContent = 'Undiscovered Inscription';
+      this.verdictScore.textContent = `Category: ${char.categoryName.en}`;
+
+      if (this.revealModernGlyph) this.revealModernGlyph.textContent = '？';
+      if (this.revealPinyin) this.revealPinyin.textContent = '???';
+      if (this.revealMeaning) this.revealMeaning.textContent = `Mystery ${char.categoryName.en} Character`;
+      if (this.etymologyText) {
+        this.etymologyText.textContent = `This 3,000-year-old pictograph belongs to the "${char.categoryName.en}" (${char.categoryName.zh}) category. Guess its meaning in a challenge to decipher its origin story, discover all 4 evolution stages, and unlock it in the Codex!`;
+      }
+      if (this.funFactText) {
+        this.funFactText.textContent = `Shang dynasty scribes carved thousands of divination characters. Can you decode this ${char.categoryName.en} inscription?`;
+      }
+
+      if (this.evolutionStepper) {
+        this.evolutionStepper.innerHTML = '';
+        const mysteryStages = [
+          { era: '商代 (~1200 BCE)', stage: '甲骨文', glyph: char.oracle_bone.svg },
+          { era: '西周 (~1000 BCE)', stage: '金文', glyph: '？' },
+          { era: '秦代 (~221 BCE)', stage: '小篆', glyph: '？' },
+          { era: '现代', stage: '楷书', glyph: '？' }
+        ];
+        mysteryStages.forEach(stage => {
+          const card = document.createElement('div');
+          card.className = 'evolution-stage-card';
+          card.innerHTML = `
+            <span class="stage-era">${stage.era}</span>
+            <div class="stage-glyph-display">${stage.glyph}</div>
+            <span class="stage-name">${stage.stage}</span>
+          `;
+          this.evolutionStepper.appendChild(card);
+        });
+      }
+
+      if (this.btnChallengeThis) {
+        this.btnChallengeThis.style.display = 'flex';
+        this.btnChallengeThis.innerHTML = '<span>⚔️ Challenge & Decode This Character</span>';
+        this.btnChallengeThis.onclick = () => this.challengeCharacter(char.id);
+      }
+
+      this.btnNext.textContent = 'Close (关闭)';
+      this.btnNext.onclick = () => this.closeRevealModal();
+    }
+
+    this.revealModal.classList.add('active');
+  }
+
+  speakChineseCharacter() {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      const textToSpeak = this.revealModernGlyph?.textContent || '';
+      if (!textToSpeak) return;
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.lang = 'zh-CN';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  handleLevelUp() {
+    const info = this.state.getLevelInfo();
+    this.sound.playLevelUp();
+
+    if (this.promotedBadge) this.promotedBadge.textContent = info.badge;
+    if (this.promotedTitle) this.promotedTitle.textContent = `${info.titleEn} (${info.titleZh})`;
+    if (this.promotedDesc) this.promotedDesc.textContent = info.descEn || info.desc;
+
+    if (this.levelUpModal) {
+      this.levelUpModal.classList.add('active');
+    }
+  }
+}
+
+// Bootstrap on DOM load
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', () => {
+    new AppController();
+  });
+}

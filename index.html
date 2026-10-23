@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oracle Bone Quest · 甲骨探幽</title>
+  <meta name="description" content="Discover the 3,000-year-old origins of Chinese characters through an engaging, gamified Oracle Bone script guessing experience." />
+  
+  <!-- Modern Calligraphic & Serif Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/css/variables.css" />
+  <link rel="stylesheet" href="./src/css/base.css" />
+  <link rel="stylesheet" href="./src/css/game.css" />
+  <link rel="stylesheet" href="./src/css/reveal.css" />
+  <link rel="stylesheet" href="./src/css/codex.css" />
+  <link rel="stylesheet" href="./src/css/animations.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with Branding & Controls -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <div class="brand-seal" aria-hidden="true">骨</div>
+          <div class="brand-text">
+            <h1>Oracle Bone Quest <span class="en-sub">甲骨探幽</span></h1>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <nav class="nav-tabs" aria-label="Game Navigation">
+            <button id="tab-play" class="nav-tab-btn active" type="button">⚔️ Play</button>
+            <button id="tab-codex" class="nav-tab-btn" type="button">🏛️ Artifact Codex</button>
+          </nav>
+          <button id="btn-sound" class="icon-btn" type="button" aria-label="Toggle Sound Effects" title="Toggle sound">🔔</button>
+          <button id="btn-reset" class="icon-btn" type="button" aria-label="Reset Progress" title="Reset progress">🔄</button>
+        </div>
+      </div>
+
+      <!-- Scholar Level & XP Progression Status Bar -->
+      <div class="scholar-banner">
+        <div class="scholar-badge-info">
+          <div id="scholar-badge" class="scholar-badge" aria-label="Scholar Badge">🪨</div>
+          <div class="scholar-titles">
+            <span id="scholar-title-en" class="scholar-title-zh">Novice Excavator</span>
+            <span id="scholar-title-zh" class="scholar-title-en">见习考订生 · Lv.1</span>
+          </div>
+        </div>
+
+        <div class="scholar-xp-track">
+          <div class="xp-label-row">
+            <span>Scholar XP</span>
+            <span id="xp-text">0 / 400 XP</span>
+          </div>
+          <div class="xp-bar-bg">
+            <div id="xp-fill" class="xp-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="score-stats">
+          <div class="stat-pill">
+            <span class="stat-label">Total Score</span>
+            <span id="score-display" class="stat-value">0</span>
+          </div>
+          <div id="streak-indicator" class="streak-indicator" title="Streak Multiplier">
+            <span>🔥</span>
+            <span id="streak-count">0 Streak</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Game Arena View -->
+    <main id="game-view" class="game-arena">
+      <div class="round-meta-bar">
+        <div id="round-counter" class="round-counter">Question 1</div>
+        <div class="meta-tags-group">
+          <div id="difficulty-tag" class="difficulty-tag easy">🟢 Easy</div>
+          <div id="category-tag" class="category-tag">Nature & Cosmos</div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills in Game Arena -->
+      <div class="game-category-bar" role="tablist" aria-label="Question Category Filter">
+        <span class="category-filter-label">Category:</span>
+        <button class="game-cat-btn active" data-category="all" type="button">All (全部)</button>
+        <button class="game-cat-btn" data-category="nature" type="button">Nature (自然)</button>
+        <button class="game-cat-btn" data-category="animals" type="button">Animals (动物)</button>
+        <button class="game-cat-btn" data-category="human" type="button">Human (人体)</button>
+        <button class="game-cat-btn" data-category="plants" type="button">Plants (植物)</button>
+        <button class="game-cat-btn" data-category="tools" type="button">Tools (器物)</button>
+      </div>
+
+      <!-- Difficulty Filter Pills in Game Arena -->
+      <div class="game-diff-bar" role="tablist" aria-label="Question Difficulty Filter">
+        <span class="category-filter-label">Difficulty:</span>
+        <button class="game-diff-btn active" data-difficulty="all" type="button">All (全部)</button>
+        <button class="game-diff-btn" data-difficulty="easy" type="button">🟢 Easy (入门)</button>
+        <button class="game-diff-btn" data-difficulty="medium" type="button">🟡 Medium (进阶)</button>
+        <button class="game-diff-btn" data-difficulty="hard" type="button">🔴 Master (宗师)</button>
+      </div>
+
+      <!-- Bonus Countdown Timer -->
+      <div class="timer-track" aria-label="Speed bonus timer">
+        <div id="timer-fill" class="timer-fill"></div>
+      </div>
+
+      <!-- Oracle Bone Rubbing Card -->
+      <section class="oracle-rubbing-card" aria-label="Ancient Inscription Card">
+        <div class="modern-char-badge" title="Modern Simplified Chinese Character">
+          <span class="badge-sub">Simplified</span>
+          <span id="modern-char" class="char-glyph">日</span>
+        </div>
+
+        <div id="oracle-glyph-container" class="glyph-showcase" title="Shang Dynasty Oracle Bone Inscription">
+          <!-- Dynamically Injected SVG -->
+        </div>
+
+        <div class="rubbing-hint">Authentic Shang Dynasty (~1200 BCE) Inscription Rubbing</div>
+      </section>
+
+      <!-- Guessing Prompt -->
+      <div class="guess-prompt">
+        <h2>What does this ancient character mean?</h2>
+        <p>Examine the Oracle Bone pictograph and modern character, then pick the correct meaning:</p>
+      </div>
+
+      <!-- 4 Multiple Choice Cards (English only for guessing) -->
+      <div class="choices-grid" role="group" aria-label="Meaning Choices">
+        <button id="choice-0" class="choice-btn" type="button" data-index="0">
+          <span class="choice-key-badge">1</span>
+          <span class="choice-meaning-en">Sun / Day</span>
+        </button>
+        <button id="choice-1" class="choice-btn" type="button" data-index="1">
+          <span class="choice-key-badge">2</span>
+          <span class="choice-meaning-en">Moon / Month</span>
+        </button>
+        <button id="choice-2" class="choice-btn" type="button" data-index="2">
+          <span class="choice-key-badge">3</span>
+          <span class="choice-meaning-en">Mountain / Peak</span>
+        </button>
+        <button id="choice-3" class="choice-btn" type="button" data-index="3">
+          <span class="choice-key-badge">4</span>
+          <span class="choice-meaning-en">Water / River</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Ancient Codex / Museum Gallery View (Hidden by default) -->
+    <section id="codex-view" class="codex-arena" style="display: none;">
+      <div class="codex-header-card">
+        <div class="codex-intro">
+          <h2>Oracle Bone Artifact Codex</h2>
+          <p>Identify ancient characters through play to permanently unlock them in the museum archive, or pick any character below to practice directly.</p>
+        </div>
+        <div class="codex-progress-badge">
+          <span>Decoded:</span>
+          <span id="codex-progress-text" class="progress-stats-num">0 / 186</span>
+          <span id="codex-progress-percent" style="color: var(--text-muted); font-size: 0.85rem;">(0%)</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills & Practice Action -->
+      <div class="codex-action-row">
+        <div class="codex-filters" role="tablist">
+          <button class="filter-chip active" data-category="all" type="button">All (全部)</button>
+          <button class="filter-chip" data-category="nature" type="button">Nature & Cosmos (自然)</button>
+          <button class="filter-chip" data-category="animals" type="button">Animals (飞禽走兽)</button>
+          <button class="filter-chip" data-category="human" type="button">Human & Life (人体)</button>
+          <button class="filter-chip" data-category="plants" type="button">Plants & Flora (植物)</button>
+          <button class="filter-chip" data-category="tools" type="button">Tools & Objects (器物)</button>
+        </div>
+        <button id="btn-practice-category" class="practice-category-btn" type="button">⚔️ Practice All Categories</button>
+      </div>
+
+      <!-- Difficulty Filter Row in Codex -->
+      <div class="codex-diff-row" role="tablist" aria-label="Codex Difficulty Filter">
+        <span class="filter-row-label">Difficulty:</span>
+        <button class="codex-diff-chip active" data-difficulty="all" type="button">All Tiers</button>
+        <button class="codex-diff-chip" data-difficulty="easy" type="button">🟢 Easy (入门)</button>
+        <button class="codex-diff-chip" data-difficulty="medium" type="button">🟡 Medium (进阶)</button>
+        <button class="codex-diff-chip" data-difficulty="hard" type="button">🔴 Master (宗师)</button>
+      </div>
+
+      <!-- Character Tiles Grid -->
+      <div id="codex-grid" class="codex-grid" aria-label="Ancient Character Collection">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Post-Answer Revelation Modal / Drawer -->
+    <div id="reveal-modal" class="reveal-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="verdict-title">
+      <div class="reveal-card">
+        <div class="reveal-verdict">
+          <div id="verdict-title" class="verdict-tag correct">
+            <span id="verdict-icon">✨</span>
+            <span id="verdict-text">Correct!</span>
+          </div>
+          <div id="verdict-score" class="verdict-score-bonus">+150 XP</div>
+        </div>
+
+        <!-- Identity & Pinyin Pronunciation -->
+        <div class="reveal-identity">
+          <div class="identity-left">
+            <div id="reveal-modern-glyph" class="identity-glyph">日</div>
+            <div class="identity-phonetics">
+              <div class="pinyin-row">
+                <span id="reveal-pinyin" class="pinyin-text">rì</span>
+                <button id="btn-pronounce" class="pronounce-btn" type="button" title="Listen to pronunciation" aria-label="Listen to Chinese pronunciation">🔊</button>
+                <span id="reveal-difficulty-tag" class="difficulty-tag easy">🟢 Easy</span>
+              </div>
+              <div id="reveal-meaning" class="meaning-summary">Sun / Day · 太阳、日子</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Four-Stage Historical Evolution Timeline -->
+        <div class="evolution-section">
+          <div class="section-label">3,000-Year Script Evolution · 汉字源流演进</div>
+          <div id="evolution-stepper" class="evolution-stepper">
+            <!-- Dynamically populated stages -->
+          </div>
+        </div>
+
+        <!-- Etymological Origin Story (Word Explanation Part) -->
+        <div class="evolution-section">
+          <div class="section-label">Pictographic Origin & Etymology · 造字本义</div>
+          <div id="etymology-text" class="etymology-box">
+            圆圈象征太阳外廓，中间一横或黑点表示太阳乃实体发光发热之天体，避免与空心圆混淆。
+          </div>
+        </div>
+
+        <!-- Fun Archaeological Fact -->
+        <div id="fun-fact-container" class="fun-fact-box">
+          <strong>Archaeological Notes (殷墟考据)：</strong><span id="fun-fact-text">在甲骨卜辞中，商王占卜是否出征、祭祀、或祈雨，日字皆作为核心天象字频繁出现。</span>
+        </div>
+
+        <div class="modal-actions-row">
+          <button id="btn-challenge-this" class="challenge-this-btn" type="button" style="display: none;">
+            <span>⚔️ Challenge This Inscription</span>
+          </button>
+          <button id="btn-next" class="next-question-btn" type="button">
+            <span>Next Inscription (下一题)</span>
+            <span aria-hidden="true">➔</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scholar Level-Up Celebration Modal -->
+    <div id="level-up-modal" class="level-up-modal" role="dialog" aria-modal="true">
+      <div class="level-up-content">
+        <div class="level-up-tag">SCHOLAR PROMOTION · 晋阶</div>
+        <div id="promoted-badge" class="level-up-badge">🖌️</div>
+        <div id="promoted-title" class="level-up-title">Inscription Scribe</div>
+        <div id="promoted-desc" class="level-up-desc">Skilled with the stylus, able to transcribe sacred divinations carved into oracle bones and shells.</div>
+        <button id="btn-level-dismiss" class="level-up-dismiss-btn" type="button">Accept Rank & Continue</button>
+      </div>
+    </div>
+
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <p>Oracle bone pictographs sourced from Yinxu archaeological rubbings and Wikimedia Commons open datasets · Explore 3,000 years of Chinese character heritage</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
